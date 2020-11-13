@@ -1,0 +1,135 @@
+* {
+ font-size: 12px;
+ font-family: Arial, Helvetica, sans-serif;
+ box-sizing: border-box;
+} 
+
+body{
+ background-image: url("images/background.png");
+ margin: 0;
+ padding: 0;
+ width: 100%;
+}
+
+h1{
+ text-align: center;
+ font-weight: bold;
+ font-size: 24px;
+ font-family: "Times New Roman", Georgia, serif;
+ text-shadow: 3px 3px #999999;
+}
+
+.flex-container {
+ display: flex;
+ background-color: #EEEEEE;
+ max-width: 55%; 
+ margin: auto;
+ box-shadow: 5px 5px 5px #EEEEEE; 
+}
+
+.column1{
+  float: left;
+  width: 72%;
+}
+
+.column2{
+  float: left;
+  max-width: 28%;
+  background-color: #A2B964;
+}
+
+.baner{
+  display: flex;
+  background-image: url("images/rbg.png");
+  margin-bottom: 1rem;
+}
+
+.procenat{
+ font-size: 48px;
+ font-weight: bold;
+ color:red;
+ margin-top: 16px;
+}
+
+.komentari{
+  display: flex;
+  flex-direction: column;
+}
+
+.quotebubble {
+    text-align: justify;
+    font-size: 13pt;
+    font-family: "Times New Roman", Georgia, serif;
+    font-weight: bold;
+    align-self: center;
+    background-color: #FFFFFF;
+    width: 90%;
+    border-color: #CCCCCC;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+img.crit{
+   margin-right: 5px;
+   vertical-align: middle;
+}
+
+img.cr{
+   float: left;
+   margin-left: 20px;
+   margin-right: 5px;
+}
+
+.text{
+  font-size: 13pt;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+span.publication{
+ font-style: italic;
+ font-weight: bold;
+ font-size: 13pt;
+}
+
+
+footer {
+    box-shadow: 5px 5px 5px #EEEEEE;
+    background-color: #A2B964;
+    padding: 0.5rem;
+    text-align: center;
+    width: 55%;
+    margin: 0 auto;
+}
+
+dl{
+   padding: 15px; 
+   font-size: 12pt;
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: bold;
+}
+
+dt{
+   padding-top: 15px;
+   font-weight: bold;
+   font-size: 12pt;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+dd{
+   font-weight: bold;
+   font-size: 12pt;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#w3c {
+    float: right;
+}
