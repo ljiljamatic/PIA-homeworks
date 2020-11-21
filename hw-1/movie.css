@@ -133,3 +133,8 @@ ul {
 #w3c {
     float: right;
 }
+
+img.f{
+ object-fit: fill;
+ width: 100%;
+}
