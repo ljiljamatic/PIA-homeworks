@@ -35,3 +35,12 @@ body {
 .row{
     background-color:white;
 }
+
+#meni{
+    margin-top: 20px;
+}
+
+.img-rounded{
+    margin-left: 100px;
+    margin-bottom: 30px;
+}
