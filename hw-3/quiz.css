@@ -30,7 +30,7 @@ body {
     border-radius: 100px 50px;
     border: 2px solid white;
     cursor: pointer;
-    display:none;
+    display: none;
 }
 
 #start:hover {
@@ -47,10 +47,9 @@ body {
     height: auto;
     width: 630px;
     padding: 20px;
-    background: #bbfa0f;
+    background:white;
     border-radius: 30px 10px;
     border: 2px solid white; 
-    display: none; 
 }
 
 .info-title {
@@ -63,4 +62,28 @@ body {
 
 .info {
     margin: 5px 0;
+}
+
+#guide #button {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#guide #button button {
+    height: 50px;
+    width: 100px;
+    margin: 10px 25px;
+    border-radius: 30px 10px;
+    border: 2px solid white; 
+    outline: none;
+    background-color: #fa0fbb;
+    color: white;
+    font-size: 14px;
+}
+
+#guide #button button:hover {
+    background-color:#bbfa0f;
+    color: white;
 }
