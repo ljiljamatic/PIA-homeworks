@@ -13,12 +13,16 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <body>
         <div id="container">
+
+            <!--Start section-->
             <div class="form-group">
                 <input type="text" class="form-control" id="name" placeholder="Player name: ">
             </div>
 
             <div id="start">Submit</div>
 
+
+            <!--Guide section-->
             <div id="guide">
                 <ul class="info-title"> Let's review what do you know about C++. Here are some rules of this quiz: </ul>
                 <li class="info"> The quiz contains 10 questions.</li>
@@ -36,7 +40,45 @@
                 </div>
 
             </div>
+
             
+            <!--Quiz section-->
+            <div id="quiz">
+                <div id="quiz-header">
+                    <h4>What do you know about C++?</h4>
+                    <div id="timer">
+                        <h5>00</h5>
+                    </div>
+                </div>
+
+                <!--Quiz question-->
+                <div id="question">
+                    <h2 id="questionNo">1.</h2>
+                    <h2 id="questionText">HTML Stands For</h2>
+                </div>
+
+                <!--Quiz answers-->
+                <div id="optionList">
+                    <h4 class="choice_que" id="option1">HT</h4>
+                    <h4 class="choice_que" id="option2">HL</h4>
+                    <h4 class="choice_que" id="option3">HS</h4>
+                    <h4 class="choice_que" id="option4">HV</h4>
+                </div>
+
+                <!--Answers section-->
+                <div id="answersSection">
+                    <h3 id="total_correct">3 of 10</h3>
+                    <h3 id="next-question">Next</h3>
+                </div>
+
+                <!--Result section-->
+                <div id="result">
+                    <h6>The Quiz is completed</h6>
+                    <h6 id="points">You got 4 out of 10</h6>
+                </div>
+
+            </div>
+
         </div>
     </body>
     <script src="js/script.js"></script>
