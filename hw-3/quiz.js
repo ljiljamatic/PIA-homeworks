@@ -48,6 +48,7 @@ let UserAns = undefined;
 
 //SUBMIT BUTTON
 start.addEventListener('click', ()=>{
+    console.log(playerName.value);
     start.style.display = "none";
     playerName.style.display = "none";
     guide.style.display = "block";  
@@ -97,11 +98,11 @@ continueBtn.addEventListener('click', ()=>{
 
     choice_que.forEach(removActive=>{
         removActive.classList.remove("active");
-        total_correct.innerHTML = `${correct = 0} points`;
     })
+    //total_correct.innerText = correct;
 });
 
-choice_que.forEach((choices, choiceNo) => {
+choice_que.forEach( (choices, choiceNo) => {
    choices.addEventListener("click", ()=>{
        choices.classList.add("active");
        //check answer
@@ -111,7 +112,7 @@ choice_que.forEach((choices, choiceNo) => {
        else{
            correct += 0;
        }
-
+       console.log(correct);
        //stop counter
        clearInterval(interval);
 
@@ -121,3 +122,30 @@ choice_que.forEach((choices, choiceNo) => {
        }
    }) 
 });
+
+next_question.addEventListener("click", ()=>{
+    if(index < MCQS.length-1){
+        index++;
+        choice_que.forEach(removActive=>{
+            removActive.classList.remove("active");
+        })
+
+        loadData();
+
+        total_correct.style.display = "block";
+        // total_correct.innerHTML = correct;
+        clearInterval(interval);
+        interval = setInterval(countDown, 1000);
+    }
+    else{
+        index = 0;
+
+        //result section
+        clearInterval(interval);
+        quiz.style.display="none";
+        result.style.display = "block";
+    }
+    for(let i = 0; i <=3; i++){
+        choice_que[i].classList.remove("disabled");
+    }
+})
