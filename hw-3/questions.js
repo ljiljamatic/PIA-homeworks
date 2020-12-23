@@ -5,7 +5,7 @@ let MCQS =[
         choice2: 'Bjarne Stroutstrup',
         choice3: 'James Goling', 
         choice4: 'Thomas Kushz',
-        answer:  2
+        answer:  1
     },
 
     {
@@ -14,7 +14,7 @@ let MCQS =[
         choice2: 'Switch', 
         choice3: 'Key',
         choice4: 'Size',
-        answer: 2
+        answer: 1
     },
 
     {
@@ -23,7 +23,7 @@ let MCQS =[
         choice2:  'Fixed',
         choice3: 'Character', 
         choice4: 'Floating point',
-        answer:3
+        answer:2
     },
     {
         question: '4. What character is used for modulus operator?',
@@ -31,7 +31,7 @@ let MCQS =[
         choice2: '/',
         choice3: '%',
         choice4: '+',
-        answer:3
+        answer:2
     },
 
     {
@@ -40,7 +40,7 @@ let MCQS =[
         choice2: 'Void',
         choice3: 'Static',
         choice4: 'Int',
-        answer:2
+        answer:1
     },
 
     {
@@ -49,7 +49,7 @@ let MCQS =[
         choice2: 'Static', 
         choice3: 'Register', 
         choice4: 'Auto',
-        answer:1
+        answer:0
     },
 
     {
@@ -58,6 +58,6 @@ let MCQS =[
         choice2: '!',
         choice3: '&',
         choice4: '.',
-        answer:1
+        answer:0
     }
 ]

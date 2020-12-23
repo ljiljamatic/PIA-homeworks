@@ -220,7 +220,7 @@ body {
 
 #exit{
     height: 50px;
-    width: 112px;
+    width: 105px;
     display: grid;
     place-items: center;
     position: absolute;
