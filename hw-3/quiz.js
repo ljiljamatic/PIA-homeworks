@@ -99,7 +99,6 @@ continueBtn.addEventListener('click', ()=>{
     choice_que.forEach(removActive=>{
         removActive.classList.remove("active");
     })
-    //total_correct.innerText = correct;
 });
 
 choice_que.forEach( (choices, choiceNo) => {
@@ -131,9 +130,6 @@ next_question.addEventListener("click", ()=>{
         })
 
         loadData();
-
-        total_correct.style.display = "block";
-        // total_correct.innerHTML = correct;
         clearInterval(interval);
         interval = setInterval(countDown, 1000);
     }
@@ -144,6 +140,7 @@ next_question.addEventListener("click", ()=>{
         clearInterval(interval);
         quiz.style.display="none";
         result.style.display = "block";
+        points.innerText = correct;
     }
     for(let i = 0; i <=3; i++){
         choice_que[i].classList.remove("disabled");
