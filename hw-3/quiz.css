@@ -215,7 +215,7 @@ body {
 }
 
 #quiz #answersSection h3:last-child:hover{
-    background: #b51c80;
+    background: #ffdf50;
 }
 
 #exit{
@@ -235,7 +235,7 @@ body {
 }
 
 #exit:hover{
-    background: #b51c80;
+    background: #ffdf50;
 }
 
 /*Result section */
@@ -279,4 +279,11 @@ body {
 
 #container #result button:hover {
     background: #fc5720;
+}
+
+#inputAnswer {
+    display: none;
+    width: 92%;
+    margin-top: 65px;
+    background: black;
 }

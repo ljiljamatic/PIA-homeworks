@@ -22,6 +22,7 @@ let option1 = document.querySelector("#option1");
 let option2 = document.querySelector("#option2");
 let option3 = document.querySelector("#option3");
 let option4 = document.querySelector("#option4");
+let inputAnswer = document.querySelector("#inputAnswer");
 
 //Score and next question
 let total_correct = document.querySelector("#total_correct");
@@ -36,6 +37,7 @@ let startAgain = document.querySelector("#startAgain");
 //Choices 
 let choice_que = document.querySelectorAll(".choice_que");
 
+let i = 0;
 let index = 0;
 let timer = 0;
 let interval = 0;
@@ -133,6 +135,22 @@ next_question.addEventListener("click", ()=>{
         clearInterval(interval);
         interval = setInterval(countDown, 1000);
     }
+    else if(index >= MCQS.length-1 && index < 9 ){
+        option1.style.display = "none";
+        option2.style.display = "none";
+        option3.style.display = "none";
+        option4.style.display = "none";
+        index++;
+
+        questionText.innerText = questions2[i].question;
+        i++;
+        inputAnswer.style.display = "block";
+
+        timer = 0;
+        clearInterval(interval);
+        interval = setInterval(countDown, 1000);
+    }
+
     else{
         index = 0;
 
@@ -142,6 +160,7 @@ next_question.addEventListener("click", ()=>{
         result.style.display = "block";
         points.innerText = correct;
     }
+
     for(let i = 0; i <=3; i++){
         choice_que[i].classList.remove("disabled");
     }
@@ -150,10 +169,13 @@ next_question.addEventListener("click", ()=>{
 
 quit.addEventListener("click", ()=>{
     result.style.display = "none";
+    correct = 0;
+    playerName.value = undefined;
 })
 
 startAgain.addEventListener("click", ()=>{
     result.style.display = "none";
     start.style.display = "block";
     playerName.style.display = "block";
+    correct = 0;
 })
