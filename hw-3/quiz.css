@@ -32,7 +32,6 @@ body {
     border-radius: 100px 50px;
     border: 2px solid white;
     cursor: pointer;
-    display: none;
 }
 
 #start:hover {
@@ -42,7 +41,6 @@ body {
 
 #name {
     margin-bottom: 40px;
-    display: none;
 }
 
 #guide {
@@ -104,6 +102,7 @@ body {
     border: 2px solid white; 
     height: 500px;
     position: relative;
+    display: none;
 }
 
 #quiz #quiz-header {
@@ -238,6 +237,7 @@ body {
     color: black;
     top: 40px;
     left: 120px;
+    display: none;
 }
 
 #container #result h6 {
@@ -259,7 +259,6 @@ body {
     width: 250px;
     text-align: center;
     background: #fa0fbb;
-    border: none;
     outline: none;
     color: white;
     border-radius: 20px 5px;
