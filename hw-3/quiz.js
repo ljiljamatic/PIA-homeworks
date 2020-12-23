@@ -138,11 +138,22 @@ next_question.addEventListener("click", ()=>{
 
         //result section
         clearInterval(interval);
-        quiz.style.display="none";
+        quiz.style.display= "none";
         result.style.display = "block";
         points.innerText = correct;
     }
     for(let i = 0; i <=3; i++){
         choice_que[i].classList.remove("disabled");
     }
+})
+
+
+quit.addEventListener("click", ()=>{
+    result.style.display = "none";
+})
+
+startAgain.addEventListener("click", ()=>{
+    result.style.display = "none";
+    start.style.display = "block";
+    playerName.style.display = "block";
 })
