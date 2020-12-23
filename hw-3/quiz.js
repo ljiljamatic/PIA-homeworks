@@ -34,7 +34,7 @@ let quit = document.querySelector("#quit");
 let startAgain = document.querySelector("#startAgain");
 
 //Choices 
-let choice_que = document.querySelector(".choice_que");
+let choice_que = document.querySelectorAll(".choice_que");
 
 let index = 0;
 let timer = 0;
@@ -92,6 +92,22 @@ loadData();
 continueBtn.addEventListener('click', ()=>{
     quiz.style.display = "block";
     guide.style.display = "none";
-    interval = setInterval();
+    interval = setInterval(countDown, 1000);
     loadData();
+});
+
+choice_que.forEach((choices, choiceNo) => {
+   choices.addEventListener("click", ()=>{
+       choices.classList.add("active");
+       //check answer
+       if(choiceNo === MCQSP[index].answer){
+           correct++;
+       }
+       else{
+           correct += 0;
+       }
+
+       //stop counter
+       clearInterval(interval);
+   }) 
 });
