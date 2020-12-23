@@ -178,4 +178,11 @@ startAgain.addEventListener("click", ()=>{
     start.style.display = "block";
     playerName.style.display = "block";
     correct = 0;
+    index = 0;
+    i = 0;
+    option1.style.display = "block";
+    option2.style.display = "block";
+    option3.style.display = "block";
+    option4.style.display = "block";
+    inputAnswer.style.display = "none";
 })
