@@ -230,5 +230,45 @@ body {
     border: 1px solid white;
     overflow: hidden;
     position: relative;
-    display:none;
+}
+
+#container #result {
+    font-size: 150px;
+    position: absolute;
+    color: black;
+    top: 40px;
+    left: 120px;
+}
+
+#container #result h6 {
+    height: 50px;
+    width: 85%;
+    font-size: 23px;
+    position: absolute;
+    text-align: center;
+    top: 180px;
+}
+
+#container #result #points {
+    font-size: 25px;
+    top: 220px;
+}
+
+#container #result button {
+    height: 50px;
+    width: 250px;
+    text-align: center;
+    background: #fa0fbb;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 20px 5px;
+    border: 2px solid white;
+    font-size: 17px;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+#container #result button:hover {
+    background:  #bbfa0f;
 }
