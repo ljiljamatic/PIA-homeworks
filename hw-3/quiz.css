@@ -155,7 +155,7 @@ body {
 
 #quiz #optionList h4 {
     height: 48px;
-    width: 545px;
+    width: 587px;
     background: #bbfa0f;
     margin: 10px 0;
     border-radius: 7px;
@@ -215,6 +215,26 @@ body {
 }
 
 #quiz #answersSection h3:last-child:hover{
+    background:#fa0fbb;
+}
+
+#exit{
+    height: 50px;
+    width: 112px;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    left:0;
+    bottom: 0;
+    color: white;
+    border: 2px solid white;
+    font-size: 22px;
+    border-radius: 20px 5px;
+    cursor: pointer;
+    background: #bbfa0f;
+}
+
+#exit:hover{
     background:#fa0fbb;
 }
 

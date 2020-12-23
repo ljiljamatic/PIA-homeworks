@@ -49,6 +49,7 @@ let UserAns = undefined;
 //SUBMIT BUTTON
 start.addEventListener('click', ()=>{
     console.log(playerName.value);
+    console.log(correct);
     start.style.display = "none";
     playerName.style.display = "none";
     guide.style.display = "block";  
@@ -56,9 +57,8 @@ start.addEventListener('click', ()=>{
 
 //EXIT BUTTON
 exit.addEventListener('click', ()=>{
-    start.style.display = "block";
-    playerName.style.display = "block";
-    guide.style.display = "none";
+    quiz.style.display = "none";
+    result.style.display = "block";
 });
 
 //TIMER
