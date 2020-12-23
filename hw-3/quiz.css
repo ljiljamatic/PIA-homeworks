@@ -25,7 +25,7 @@ body {
     width: 230px;
     text-align: center;
     padding: 20px 0;
-    background-color: #fa0fbb;
+    background-color: #1c14ff;
     color: white;
     font-size: 20px;
     font-weight: 700;
@@ -35,7 +35,7 @@ body {
 }
 
 #start:hover {
-    background-color:#bbfa0f;
+    background-color:black;
     color: white;
 }
 
@@ -81,13 +81,13 @@ body {
     border-radius: 30px 10px;
     border: 2px solid white; 
     outline: none;
-    background-color: #fa0fbb;
+    background-color:  #1c14ff;
     color: white;
     font-size: 14px;
 }
 
 #guide #button button:hover {
-    background-color:#bbfa0f;
+    background-color:black;
     color: white;
 }
 
@@ -108,7 +108,7 @@ body {
 #quiz #quiz-header {
     height: 68px;
     width: 100%;
-    background: #fa0fbb;
+    background:  black;
     position: absolute;
     top: 0;
     left: 0;
@@ -128,7 +128,7 @@ body {
 #quiz #quiz-header #timer {
     height: 50px;
     width: 50px;
-    background: #bbfa0f;
+    background:black;
     color: white;
     border: 2px solid white;
     border-radius: 100px 100px;
@@ -156,7 +156,7 @@ body {
 #quiz #optionList h4 {
     height: 48px;
     width: 587px;
-    background: #bbfa0f;
+    background: #1c14ff;
     margin: 10px 0;
     border-radius: 7px;
     padding: 13px 20px;
@@ -167,12 +167,12 @@ body {
 }
 
 #quiz #optionList h4:hover {
-    background: #fa0fbb;
+    background: black;
     color:white;
 }
 
 #quiz #optionList .active {
-    background: #fa0fbb;
+    background:  #1c14ff;
 }
 
 #quiz #optionList .disabled {
@@ -211,11 +211,11 @@ body {
     border-radius: 20px 5px;
     cursor: pointer;
     margin: 0 15px;
-    background: #bbfa0f;
+    background: black;
 }
 
 #quiz #answersSection h3:last-child:hover{
-    background:#fa0fbb;
+    background: #1c14ff;
 }
 
 #exit{
@@ -231,11 +231,11 @@ body {
     font-size: 22px;
     border-radius: 20px 5px;
     cursor: pointer;
-    background: #bbfa0f;
+    background: black;
 }
 
 #exit:hover{
-    background:#fa0fbb;
+    background: #1c14ff;
 }
 
 /*Result section */
@@ -267,7 +267,7 @@ body {
     height: 50px;
     width: 250px;
     text-align: center;
-    background: #fa0fbb;
+    background:  #1c14ff;
     outline: none;
     color: white;
     border-radius: 20px 5px;
@@ -278,5 +278,5 @@ body {
 }
 
 #container #result button:hover {
-    background:  #bbfa0f;
+    background:  black;
 }
