@@ -50,10 +50,48 @@ let UserAns = undefined;
 start.addEventListener('click', ()=>{
     start.style.display = "none";
     playerName.style.display = "none";
-    guide.style.display = "block";
-    console.log(playerName.value);
+    guide.style.display = "block";  
 });
 
+//EXIT BUTTON
+exit.addEventListener('click', ()=>{
+    start.style.display = "block";
+    playerName.style.display = "block";
+    guide.style.display = "none";
+});
 
+//TIMER
+let countDown = ()=>{
+    if(timer === 20){
+        clearInterval(interval);
+        next_question.click();
+    }
+    else{
+        timer++;
+        time.innerText = timer;
+    }
+}
 
+//setInterval(countDown, 1000);
 
+let loadData = ()=>{
+    questionNo.innerText = index + 1 + ". ";
+    questionText.innerText = MCQS[index].question;
+    option1.innerText = MCQS[index].choice1;
+    option2.innerText = MCQS[index].choice2;
+    option3.innerText = MCQS[index].choice3;
+    option4.innerText = MCQS[index].choice4;
+
+    //start timer
+    timer = 0;
+}
+
+loadData();
+
+//CONTINUE BUTTON
+continueBtn.addEventListener('click', ()=>{
+    quiz.style.display = "block";
+    guide.style.display = "none";
+    interval = setInterval();
+    loadData();
+});
