@@ -94,13 +94,18 @@ continueBtn.addEventListener('click', ()=>{
     guide.style.display = "none";
     interval = setInterval(countDown, 1000);
     loadData();
+
+    choice_que.forEach(removActive=>{
+        removActive.classList.remove("active");
+        total_correct.innerHTML = `${correct = 0} points`;
+    })
 });
 
 choice_que.forEach((choices, choiceNo) => {
    choices.addEventListener("click", ()=>{
        choices.classList.add("active");
        //check answer
-       if(choiceNo === MCQSP[index].answer){
+       if(choiceNo === MCQS[index].answer){
            correct++;
        }
        else{
@@ -109,5 +114,10 @@ choice_que.forEach((choices, choiceNo) => {
 
        //stop counter
        clearInterval(interval);
+
+       //disable other choices when the answer is selected
+       for(let i = 0; i <=3; i++){
+           choice_que[i].classList.add("disabled");
+       }
    }) 
 });
