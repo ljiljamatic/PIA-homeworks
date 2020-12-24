@@ -36,6 +36,7 @@ let startAgain = document.querySelector("#startAgain");
 
 //Choices 
 let choice_que = document.querySelectorAll(".choice_que");
+let btn = document.querySelector(".btn");
 
 let i = 0;
 let index = 0;
@@ -44,6 +45,21 @@ let interval = 0;
 
 //Score
 let correct = 0;
+
+//BTN INPUT ANSWER
+btn.addEventListener('click', ()=>{
+    let ia = inputAnswer.value.toLowerCase();
+    console.log(questions2[i-1].answer);
+    console.log(ia);
+    if(questions2[i-1].answer == ia){
+        correct++;
+    }
+    else{
+        correct += 0;
+    }
+})
+
+
 
 //Answer
 let UserAns = undefined;
@@ -143,12 +159,12 @@ next_question.addEventListener("click", ()=>{
         index++;
 
         questionText.innerText = questions2[i].question;
-        i++;
         inputAnswer.style.display = "block";
 
         timer = 0;
         clearInterval(interval);
         interval = setInterval(countDown, 1000);
+        i++;
     }
 
     else{
