@@ -36,7 +36,7 @@ let startAgain = document.querySelector("#startAgain");
 
 //Choices 
 let choice_que = document.querySelectorAll(".choice_que");
-let btn = document.querySelector(".btn");
+let btnn = document.querySelector(".btnn");
 
 let i = 0;
 let index = 0;
@@ -47,7 +47,8 @@ let interval = 0;
 let correct = 0;
 
 //BTN INPUT ANSWER
-btn.addEventListener('click', ()=>{
+btnn.addEventListener('click', ()=>{
+    next_question.style.display = "none";
     let ia = inputAnswer.value.toLowerCase();
     console.log(questions2[i-1].answer);
     console.log(ia);
@@ -57,8 +58,33 @@ btn.addEventListener('click', ()=>{
     else{
         correct += 0;
     }
-})
 
+    if(index >= MCQS.length-1 && index < 9 ){
+        option1.style.display = "none";
+        option2.style.display = "none";
+        option3.style.display = "none";
+        option4.style.display = "none";
+        index++;
+
+        questionText.innerText = questions2[i].question;
+        inputAnswer.style.display = "block";
+
+        timer = 0;
+        clearInterval(interval);
+        interval = setInterval(countDown, 1000);
+        i++;
+    }
+
+    else{
+        index = 0;
+
+        //result section
+        clearInterval(interval);
+        quiz.style.display= "none";
+        result.style.display = "block";
+        points.innerText = correct;
+    }
+})
 
 
 //Answer
@@ -66,6 +92,7 @@ let UserAns = undefined;
 
 //SUBMIT BUTTON
 start.addEventListener('click', ()=>{
+    btnn.style.display = "none";
     console.log(playerName.value);
     console.log(correct);
     start.style.display = "none";
@@ -152,6 +179,8 @@ next_question.addEventListener("click", ()=>{
         interval = setInterval(countDown, 1000);
     }
     else if(index >= MCQS.length-1 && index < 9 ){
+        btnn.style.display = "block";
+        next_question.style.display = "none";
         option1.style.display = "none";
         option2.style.display = "none";
         option3.style.display = "none";
@@ -161,7 +190,7 @@ next_question.addEventListener("click", ()=>{
         questionText.innerText = questions2[i].question;
         inputAnswer.style.display = "block";
 
-        timer = 0;
+        /*timer = 0;*/
         clearInterval(interval);
         interval = setInterval(countDown, 1000);
         i++;
@@ -190,12 +219,14 @@ quit.addEventListener("click", ()=>{
 })
 
 startAgain.addEventListener("click", ()=>{
+    btnn.style.display = "none";
     result.style.display = "none";
     start.style.display = "block";
     playerName.style.display = "block";
     correct = 0;
     index = 0;
     i = 0;
+    next_question.style.display = "block";
     option1.style.display = "block";
     option2.style.display = "block";
     option3.style.display = "block";

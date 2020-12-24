@@ -84,6 +84,7 @@ body {
     background-color:  #b51c80;
     color: white;
     font-size: 14px;
+    text-align: center;
 }
 
 #guide #button button:hover {
@@ -283,12 +284,27 @@ body {
 
 #inputAnswer {
     display: none;
-    width: 80%;
+    width: 70%;
     margin-top: 65px;
     margin-left: 30px;
-    background: black;
+    background: white;
 }
 
-.btn {
-    margin-left: 30px;
+.btnn {
+    height: 50px;
+    width: 115px;
+    border-radius: 30px 10px;
+    border: 2px solid white; 
+    outline: none;
+    background-color:  #b51c80;
+    color: white;
+    margin-left: 485px;
+    margin-top: 5px;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.btnn:hover {
+    background: #fc5720;
 }
