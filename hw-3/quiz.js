@@ -101,6 +101,11 @@ start.addEventListener('click', ()=>{
 exit.addEventListener('click', ()=>{
     quiz.style.display = "none";
     result.style.display = "block";
+    clearInterval(interval);
+    points.innerText = correct;
+    loadResults();
+    showResults();
+    document.getElementById("bestResults").style.display = "";
 });
 
 let changeTime = ()=>{
