@@ -241,8 +241,6 @@ body {
 
 /*Result section */
 
-
-
 #container #result {
     font-size: 150px;
     color: white;
@@ -321,7 +319,7 @@ body {
     font-weight: bold;
 }
 
-/*tabela*/
+/*Table*/
 
 #top10{
     margin-left: 50px;
@@ -336,27 +334,27 @@ body {
 table{
    margin: 0 auto;
    width: 50%;
-   border: 2px solid white;
+   border: 1px solid white;
    border-collapse: collapse; 
    background-color: white;
    font-weight: bold;
 }
 
-th{
-    background-color: #b51c80;
-}
 th, td {
     padding: 8px;
     border: 8px solid white;
+    color: white;
+    background-color: #b51c80;
   }
 
  .toprez{
     text-align: center;
     width:2px;
+    color: white;
 }
 
- #redniBroj{
+ #position {
     background-color:#b51c80;
+    width: 3px;    
     text-align: center;
-    width: 2px;    
 }

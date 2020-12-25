@@ -18,6 +18,7 @@ questionsJSON = JSON.parse(questionsJSON);*/
 let start = document.querySelector("#start");
 let playerName = document.querySelector("#name");
 let nameScore = document.querySelector("#nameScore");
+
 //Quide section
 
 let guide = document.querySelector("#guide");
@@ -30,6 +31,7 @@ let quiz = document.querySelector("#quiz");
 let time = document.querySelector("#time");
 
 //Question section
+
 let questionNo = document.querySelector("#questionNo");
 let questionText = document.querySelector("#questionText");
 
@@ -56,15 +58,21 @@ let btnn = document.querySelector(".btnn");
 let prompt = document.querySelector("#prompt");
 let naslov = document.querySelector("#naslov");
 
+//Variables
 let i = 0;
 let index = 0;
 let timer = 0;
 let interval = 0;
 
+//Answer variables
+let UserAns = undefined;
+let username;
+
 //Score
 let correct = 0;
 
-//BTN INPUT ANSWER
+//INPUT BUTTON
+
 btnn.addEventListener('click', ()=>{
     let ia = inputAnswer.value.toLowerCase();
     if(questions2[i-1].answer == ia){
@@ -81,10 +89,6 @@ btnn.addEventListener('click', ()=>{
     interval = setInterval(changeTime, 1000);
 })
 
-
-//Answer
-let UserAns = undefined;
-let username;
 
 //SUBMIT BUTTON
 start.addEventListener('click', ()=>{
@@ -130,7 +134,7 @@ let countDown = ()=>{
         time.innerText = timer;
     }
 }
-//setInterval(countDown, 1000);
+
 
 let loadData = ()=>{
     questionNo.innerText = index + 1 + ". ";
@@ -185,6 +189,8 @@ choice_que.forEach( (choices, choiceNo) => {
    }) 
 });
 
+//NEXT BUTTON
+
 next_question.addEventListener("click", ()=>{
     naslov.innerHTML = "";
     if(index < questionsJSON.length-1){
@@ -235,6 +241,7 @@ next_question.addEventListener("click", ()=>{
     }
 })
 
+//QUIT BUTTON
 
 quit.addEventListener("click", ()=>{
     result.style.display = "none";
@@ -288,7 +295,8 @@ let loadResults = () =>{
 }
 
 
-//tabela
+//Table
+
 let showResults = () =>{
     let names = JSON.parse(localStorage.getItem("names"));
     let points = JSON.parse(localStorage.getItem("points"));
