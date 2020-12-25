@@ -38,6 +38,7 @@ let startAgain = document.querySelector("#startAgain");
 let choice_que = document.querySelectorAll(".choice_que");
 let btnn = document.querySelector(".btnn");
 let prompt = document.querySelector("#prompt");
+let naslov = document.querySelector("#naslov");
 
 let i = 0;
 let index = 0;
@@ -52,12 +53,13 @@ btnn.addEventListener('click', ()=>{
     let ia = inputAnswer.value.toLowerCase();
     if(questions2[i-1].answer == ia){
         correct++;
-        prompt.innerHTML = "TRUE";
+        prompt.innerHTML = "TRUE!!";
     }
     else{
         correct += 0;
-        prompt.innerHTML = "FALSE";
+        prompt.innerHTML = "FALSE!!" + " Correct: " + questions2[i-1].answer ;
     }
+
     timer = 0;
     clearInterval(interval);
     interval = setInterval(changeTime, 1000);
@@ -140,15 +142,19 @@ choice_que.forEach( (choices, choiceNo) => {
        //check answer
        if(choiceNo === MCQS[index].answer){
            correct++;
-           prompt.value = "True";
-           console.log(prompt.value);
+           naslov.innerHTML = "TRUE!!";
+           timer = 0;
+           clearInterval(interval);
+           interval = setInterval(changeTime, 1000);
        }
        else{
            correct += 0;
+           let ch = MCQS[index].answer + 1;
+           naslov.innerHTML = "FALSE!!" + " Correct choice " + ch + ".";
+           timer = 0;
+           clearInterval(interval);
+           interval = setInterval(changeTime, 1000);
        }
-       console.log(correct);
-       //stop counter
-       clearInterval(interval);
 
        //disable other choices when the answer is selected
        for(let i = 0; i <=3; i++){
@@ -158,6 +164,7 @@ choice_que.forEach( (choices, choiceNo) => {
 });
 
 next_question.addEventListener("click", ()=>{
+    naslov.innerHTML = "";
     if(index < MCQS.length-1){
         index++;
         choice_que.forEach(removActive=>{

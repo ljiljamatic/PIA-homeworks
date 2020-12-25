@@ -148,10 +148,10 @@ body {
 }
 
 #quiz #optionList {
-    height: 350px;
+    height: 400px;
     width: 100%;
     position: absolute;
-    top: 190px;
+    top: 170px;
 }
 
 #quiz #optionList h4 {
@@ -183,7 +183,7 @@ body {
 /*Answers section */
 
 #quiz #answersSection {
-    height: 63px;
+    height: 55px;
     width: 100%;
     background:white;
     position: absolute;
@@ -298,7 +298,7 @@ body {
     outline: none;
     background-color:  #b51c80;
     color: white;
-    margin-left: 485px;
+    margin-left: 482px;
     margin-top: 5px;
     text-align: center;
     padding: 10px;
@@ -307,4 +307,16 @@ body {
 
 .btnn:hover {
     background: #fc5720;
+}
+
+#naslov {
+    margin-left: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#prompt {
+    margin-left: 32px;
+    font-size: 20px;
+    font-weight: bold;
 }

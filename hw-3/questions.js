@@ -18,7 +18,7 @@ let MCQS =[
     },
 
     {
-        question: '3. What is a constant that contains a single character enclosed within single quotes?',
+        question: '3. What is a constant that contains a single character?',
         choice1:  'Numeric',
         choice2:  'Fixed',
         choice3: 'Character', 
