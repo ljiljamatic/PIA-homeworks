@@ -37,6 +37,7 @@ let startAgain = document.querySelector("#startAgain");
 //Choices 
 let choice_que = document.querySelectorAll(".choice_que");
 let btnn = document.querySelector(".btnn");
+let prompt = document.querySelector("#prompt");
 
 let i = 0;
 let index = 0;
@@ -48,42 +49,18 @@ let correct = 0;
 
 //BTN INPUT ANSWER
 btnn.addEventListener('click', ()=>{
-    next_question.style.display = "none";
     let ia = inputAnswer.value.toLowerCase();
-    console.log(questions2[i-1].answer);
-    console.log(ia);
     if(questions2[i-1].answer == ia){
         correct++;
+        prompt.innerHTML = "TRUE";
     }
     else{
         correct += 0;
+        prompt.innerHTML = "FALSE";
     }
-
-    if(index >= MCQS.length-1 && index < 9 ){
-        option1.style.display = "none";
-        option2.style.display = "none";
-        option3.style.display = "none";
-        option4.style.display = "none";
-        index++;
-
-        questionText.innerText = questions2[i].question;
-        inputAnswer.style.display = "block";
-
-        timer = 0;
-        clearInterval(interval);
-        interval = setInterval(countDown, 1000);
-        i++;
-    }
-
-    else{
-        index = 0;
-
-        //result section
-        clearInterval(interval);
-        quiz.style.display= "none";
-        result.style.display = "block";
-        points.innerText = correct;
-    }
+    timer = 0;
+    clearInterval(interval);
+    interval = setInterval(changeTime, 1000);
 })
 
 
@@ -105,6 +82,17 @@ exit.addEventListener('click', ()=>{
     quiz.style.display = "none";
     result.style.display = "block";
 });
+
+let changeTime = ()=>{
+    if (timer === 3){
+        clearInterval(interval);
+        next_question.click();
+    }
+    else{
+        timer++;
+        time.innerHTML = timer;
+    }
+}
 
 //TIMER
 let countDown = ()=>{
@@ -152,6 +140,8 @@ choice_que.forEach( (choices, choiceNo) => {
        //check answer
        if(choiceNo === MCQS[index].answer){
            correct++;
+           prompt.value = "True";
+           console.log(prompt.value);
        }
        else{
            correct += 0;
@@ -180,7 +170,6 @@ next_question.addEventListener("click", ()=>{
     }
     else if(index >= MCQS.length-1 && index < 9 ){
         btnn.style.display = "block";
-        next_question.style.display = "none";
         option1.style.display = "none";
         option2.style.display = "none";
         option3.style.display = "none";
@@ -190,10 +179,12 @@ next_question.addEventListener("click", ()=>{
         questionText.innerText = questions2[i].question;
         inputAnswer.style.display = "block";
 
-        /*timer = 0;*/
+        timer = 0;
         clearInterval(interval);
         interval = setInterval(countDown, 1000);
         i++;
+        prompt.innerHTML = "";    
+        inputAnswer.value = "";
     }
 
     else{
@@ -218,18 +209,6 @@ quit.addEventListener("click", ()=>{
     playerName.value = undefined;
 })
 
-startAgain.addEventListener("click", ()=>{
-    btnn.style.display = "none";
-    result.style.display = "none";
-    start.style.display = "block";
-    playerName.style.display = "block";
-    correct = 0;
-    index = 0;
-    i = 0;
-    next_question.style.display = "block";
-    option1.style.display = "block";
-    option2.style.display = "block";
-    option3.style.display = "block";
-    option4.style.display = "block";
-    inputAnswer.style.display = "none";
+startAgain.addEventListener("click", ()=> {
+    window.location.href = "quiz.html";
 })

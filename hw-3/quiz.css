@@ -3,7 +3,6 @@
     margin: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-
 }
 
 body {
@@ -72,6 +71,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    text-align: center;
 }
 
 #guide #button button {
@@ -284,7 +284,7 @@ body {
 
 #inputAnswer {
     display: none;
-    width: 70%;
+    width: 83%;
     margin-top: 65px;
     margin-left: 30px;
     background: white;
