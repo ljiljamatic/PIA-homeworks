@@ -1,4 +1,4 @@
-let MCQS =[
+let questionsJSON =[
     {
         question: '1. C++ was developed by?',
         choice1: 'John Kemney',

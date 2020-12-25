@@ -1,7 +1,23 @@
+/*var questionsJSON = undefined;
+fetch('fajl.json').then(function(response){
+    return response.json();
+}).then(function(data){
+    questionsJSON = data;
+});
+
+var questions2;
+fetch('questionss1.json').then(function (response) {
+			return response.json()
+		}).then(function (data) {
+            questions2 = data;
+		});
+questionsJSON = JSON.parse(questionsJSON);*/
+
 //Start Section
 
 let start = document.querySelector("#start");
 let playerName = document.querySelector("#name");
+let nameScore = document.querySelector("#nameScore");
 //Quide section
 
 let guide = document.querySelector("#guide");
@@ -68,12 +84,14 @@ btnn.addEventListener('click', ()=>{
 
 //Answer
 let UserAns = undefined;
+let username;
 
 //SUBMIT BUTTON
 start.addEventListener('click', ()=>{
     btnn.style.display = "none";
     console.log(playerName.value);
     console.log(correct);
+    username = playerName.value;
     start.style.display = "none";
     playerName.style.display = "none";
     guide.style.display = "block";  
@@ -107,16 +125,15 @@ let countDown = ()=>{
         time.innerText = timer;
     }
 }
-
 //setInterval(countDown, 1000);
 
 let loadData = ()=>{
     questionNo.innerText = index + 1 + ". ";
-    questionText.innerText = MCQS[index].question;
-    option1.innerText = MCQS[index].choice1;
-    option2.innerText = MCQS[index].choice2;
-    option3.innerText = MCQS[index].choice3;
-    option4.innerText = MCQS[index].choice4;
+    questionText.innerText = questionsJSON[index].question;
+    option1.innerText = questionsJSON[index].choice1;
+    option2.innerText = questionsJSON[index].choice2;
+    option3.innerText = questionsJSON[index].choice3;
+    option4.innerText = questionsJSON[index].choice4;
 
     //start timer
     timer = 0;
@@ -140,7 +157,7 @@ choice_que.forEach( (choices, choiceNo) => {
    choices.addEventListener("click", ()=>{
        choices.classList.add("active");
        //check answer
-       if(choiceNo === MCQS[index].answer){
+       if(choiceNo === questionsJSON[index].answer){
            correct++;
            naslov.innerHTML = "TRUE!!";
            timer = 0;
@@ -149,7 +166,7 @@ choice_que.forEach( (choices, choiceNo) => {
        }
        else{
            correct += 0;
-           let ch = MCQS[index].answer + 1;
+           let ch = questionsJSON[index].answer + 1;
            naslov.innerHTML = "FALSE!!" + " Correct choice " + ch + ".";
            timer = 0;
            clearInterval(interval);
@@ -165,7 +182,7 @@ choice_que.forEach( (choices, choiceNo) => {
 
 next_question.addEventListener("click", ()=>{
     naslov.innerHTML = "";
-    if(index < MCQS.length-1){
+    if(index < questionsJSON.length-1){
         index++;
         choice_que.forEach(removActive=>{
             removActive.classList.remove("active");
@@ -175,7 +192,7 @@ next_question.addEventListener("click", ()=>{
         clearInterval(interval);
         interval = setInterval(countDown, 1000);
     }
-    else if(index >= MCQS.length-1 && index < 9 ){
+    else if(index >= questionsJSON.length-1 && index < 9 ){
         btnn.style.display = "block";
         option1.style.display = "none";
         option2.style.display = "none";
@@ -202,6 +219,10 @@ next_question.addEventListener("click", ()=>{
         quiz.style.display= "none";
         result.style.display = "block";
         points.innerText = correct;
+        loadResults();
+        showResults();
+        document.getElementById("bestResults").style.display = "";
+
     }
 
     for(let i = 0; i <=3; i++){
@@ -219,3 +240,56 @@ quit.addEventListener("click", ()=>{
 startAgain.addEventListener("click", ()=> {
     window.location.href = "quiz.html";
 })
+
+let loadResults = () =>{
+    let names = JSON.parse(localStorage.getItem("names"));
+    let points = JSON.parse(localStorage.getItem("points"));
+    if(points==null){
+        points = [];
+        names = [];
+        names.push(username);
+        points.push(correct);
+    }
+    else{
+        var x;
+        var y;
+        for(var i=0;i<names.length;i++){
+            if(points[i]<correct){
+                x = names[i];
+                y = points[i]
+                names[i] = username;
+                points[i] = correct;
+                username = x;
+                correct = y;
+            }
+            else if(points[i]==correct){
+                if(names[i]>username){
+                    x = names[i];
+                    y = points[i]
+                    names[i] = username;
+                    points[i] = correct;
+                    username = x;
+                    correct = y;
+                }
+            }
+        }
+        names.push(username);
+        points.push(correct);
+    }
+    if(points.length<11){
+        localStorage.setItem("names", JSON.stringify(names));
+        localStorage.setItem("points", JSON.stringify(points));
+    }
+}
+
+
+//tabela
+let showResults = () =>{
+    let names = JSON.parse(localStorage.getItem("names"));
+    let points = JSON.parse(localStorage.getItem("points"));
+    for(var i=0;i<points.length;i++){
+        console.log("player"+(i+1).toString())
+        document.getElementById("player"+(i+1).toString()).innerHTML = names[i];
+        document.getElementById("result"+(i+1).toString()).innerHTML = points[i];
+    }
+}

@@ -320,3 +320,43 @@ body {
     font-size: 20px;
     font-weight: bold;
 }
+
+/*tabela*/
+
+#top10{
+    margin-left: 50px;
+    padding: 8px;
+    background-color: white;
+    color:white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 16px;
+}
+
+table{
+   margin: 0 auto;
+   width: 50%;
+   border: 2px solid white;
+   border-collapse: collapse; 
+   background-color: white;
+   font-weight: bold;
+}
+
+th{
+    background-color: #b51c80;
+}
+th, td {
+    padding: 8px;
+    border: 8px solid white;
+  }
+
+ .toprez{
+    text-align: center;
+    width:2px;
+}
+
+ #redniBroj{
+    background-color:#b51c80;
+    text-align: center;
+    width: 2px;    
+}
