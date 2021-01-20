@@ -8,7 +8,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 <html>
 <head>
     <title>LOGIN</title>
-    <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="stylesheet" type="text/css" href="full.css">
 </head>
 
 <body>
@@ -23,8 +23,15 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
         while($row = mysqli_fetch_assoc($result)){
         
 ?>
-    <h2 class="title"><?php echo $row['title']; ?></h2>
-    <p><?php echo $row['description']; ?></p>
+    <div class="container">
+        <div class="content">
+            <img class="movie-image" src="<?= $row['image_url'] ?>">
+            <div class="title">
+            <a class= "new" href="movie2.php" class="ca"><?= $row['title'] ?></a>
+            <span class="blue"><?= $row['imdb_rating']; ?></span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 <?php
