@@ -24,6 +24,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
         
 ?>
     <h2 class="title"><?php echo $row['title']; ?></h2>
+    <p><?php echo $row['description']; ?></p>
 </body>
 </html>
 <?php
