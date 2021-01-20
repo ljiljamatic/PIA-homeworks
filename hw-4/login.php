@@ -12,7 +12,8 @@ if(isset($_POST['uname']) && isset($_POST['password'])) {
 
     $uname = validate($_POST['uname']);
     $pass = validate($_POST['password']);
-
+    $admin = "admin";
+    
     if(empty($uname)){
         header("Location: index.php?error=User Name or Email is required");
         exit();
@@ -23,25 +24,28 @@ if(isset($_POST['uname']) && isset($_POST['password'])) {
         $pass = md5($pass);
         $sql = "SELECT * FROM users WHERE (user_name='$uname' OR email='$uname') AND password='$pass'";
         $result = mysqli_query($conn, $sql);
-
-        if(mysqli_num_rows($result) === 1) {
+        if(mysqli_num_rows($result) == 1) {
             $row = mysqli_fetch_assoc($result); //podaci
             if(($row['user_name'] === $uname || $row['email'] === $uname)  && $row['password'] === $pass){
+                if($row['admin'] === $admin){
+                    header("location:home2.php");
+                }
+                header("location:home.php");                             
                 $_SESSION['user_name'] = $row['user_name'];
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['name'] = $row['name'];
                 $_SESSION['id'] = $row['id'];
-                header("Location: home.php");
             exit();  
             }
         }
         else{
-            header("Location: index.php?error=Incorect User Name or Password");
+            header("location:home2.php");
+            /*header("Location: index.php?error=Incorect User Name or Password");*/
             exit();           
         }
     }
-
-} else{
+}
+ else{
     header("Location: index.php");
     exit();
 }
