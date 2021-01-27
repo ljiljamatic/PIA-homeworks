@@ -16,13 +16,15 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-dark bg-secondary">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="home.php"><img src="imdb.png" width="63px" height="28px"></a>
+      <a class="navbar-brand" href="home.php"><img src="imdb.png" width="63px" height="25px"></a>
     </div>
     <form class="navbar-form navbar-left" action="home.php" method="post">
       <div class="input-group">
@@ -34,6 +36,34 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
         </div>
       </div>
     </form>
+
+    <form class="navbar-form navbar-left" action="home.php" method="post">
+      <div class="input-group">
+        <form>
+        <select name="search1" class="form-control">
+           <option disabled selected>Select movie by genre: </option>
+           <option>Action</option>
+           <option>Comedy</option>
+           <option>Romance</option>
+           <option>Sci-Fi</option>
+           <option>Horror</option>
+           <option>Thriller</option>
+           <option>Mystery</option>
+           <option>Drama</option>
+           <option>Animation</option>
+           <option>Superhero</option>
+           <option>Adventure</option>
+           <option>Crime</option>
+        </select>
+       </form>
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  
     <form class="navbar-form navbar-right">
     <a class="navbar-brand" href="login.php">Log Out</a>
     </form>
@@ -50,7 +80,18 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
       }
     $search = validate($_POST['search']);
     $sql = "SELECT * FROM movies WHERE title LIKE '%$search%'";
-    }else{
+    }
+    else if(isset($_POST['search1'])) {
+      function validate($data){
+          $data = trim($data);
+          $data = stripcslashes($data);
+          $data = htmlspecialchars($data);
+          return $data;
+      }
+    $search = validate($_POST['search1']);
+    $sql = "SELECT * FROM movies WHERE genres LIKE '%$search%'";
+    }
+    else{
     $sql = "SELECT * FROM movies";
     }
 

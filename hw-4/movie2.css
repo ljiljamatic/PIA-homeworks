@@ -5,16 +5,21 @@ body {
     margin: auto;
 }
 
-.movie-content {
-    border: 3px solid grey;
+.movie-container {
+    border: 2px solid grey;
     border-radius: 10px;
-    background-color: #fcba03;
+    background-color:white;
     text-align: center;
-    margin-left: 430px;
+    width: 370px;
+    margin:auto;
+    margin-top: 0px;
+    margin-bottom: 20px;
 }
 
-.movie-container {
-    width: 65%;
+.movie-content{
+    background-color: #fcba03;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
 }
 
 .movie-title {
@@ -26,22 +31,21 @@ body {
 .row {
     font-size: 14px;
     color: white;
-    margin-bottom: 10px;
 }
 
 .image {
+    margin-top: 0;
+    width: 100%;
     border: 0;
     padding: 0;
-    height: 400px;
-    width: 270px;
-    margin-bottom: 20px;
 }
+
 
 .description {
     background-color: white;
     color: black;
-    text-align: left !important;
-    margin-bottom: 20px;
+    text-align: justify !important;
+    margin-bottom: 10px;
 }
 
 .field {
@@ -49,4 +53,7 @@ body {
     background-color: white !important;
     color:  rgb(94, 93, 93);
     font-weight: bold !important;
+    margin-bottom: 0px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
 }

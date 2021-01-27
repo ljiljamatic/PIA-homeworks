@@ -17,11 +17,13 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 </head>
 
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-dark bg-secondary">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="home.php"><img src="imdb.png" width="63px" height="28px"></a>
+      <a class="navbar-brand" href="home.php"><img src="x.png" width="33px" height="33px"></a>
     </div>
+    <form class="navbar-form navbar-left" action="home.php" method="post">
+    </form>
     <form class="navbar-form navbar-right">
     <a class="navbar-brand" href="login.php">Log Out</a>
     </form>
@@ -39,15 +41,15 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
         <div class="movie-content">
         <div class = "movie-title"><?= $row['title'] . " (" . $row['year'] . ")" ?></div>
         <div class = "row"><?= $row['runtime'] . " | " . $row['genres'] ?></div>
-        <img class="image" src="<?= $row['image_url'] ?>">
+        </div>
         <div class="field">
+          <img class="image" src="<?= $row['image_url'] ?>">
           <div class="description"><?= $row['description'] ?></div>
           <div class="element"><?= "Production: " . $row['production'] ?></div>
           <div class="element" ><?= "Directors: " . $row['directors'] ?></div>
           <div class="element"><?= "Scenarist: " . $row['scenarist'] ?></div>
           <div class="element"><?= "Stars: " . $row['stars'] ?></div>
         </div>
-    </div>
     </div>
 </body>
 </html>
