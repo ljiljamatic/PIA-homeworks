@@ -24,9 +24,9 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
     <div class="navbar-header">
       <a class="navbar-brand" href="home.php"><img src="imdb.png" width="63px" height="28px"></a>
     </div>
-    <form class="navbar-form navbar-left">
+    <form class="navbar-form navbar-left" action="home.php" method="post">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search" name="search">
+        <input type="text" class="form-control" placeholder="Search for the movie: " name="search">
         <div class="input-group-btn">
           <button class="btn btn-default" type="submit">
             <i class="glyphicon glyphicon-search"></i>
@@ -41,7 +41,19 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 </nav>
 
 <?php
+    if(isset($_POST['search'])) {
+      function validate($data){
+          $data = trim($data);
+          $data = stripcslashes($data);
+          $data = htmlspecialchars($data);
+          return $data;
+      }
+    $search = validate($_POST['search']);
+    $sql = "SELECT * FROM movies WHERE title LIKE '%$search%'";
+    }else{
     $sql = "SELECT * FROM movies";
+    }
+
     $result = mysqli_query($conn, $sql);
     $resultCheck = mysqli_num_rows($result);
     if($resultCheck > 0){
@@ -60,8 +72,5 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 </body>
 </html>
 <?php
-}}} else{
-    header("Location: index.php");
-    exit();
-}
+  }}}
 ?>

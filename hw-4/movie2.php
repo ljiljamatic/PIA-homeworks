@@ -22,16 +22,6 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
     <div class="navbar-header">
       <a class="navbar-brand" href="home.php"><img src="imdb.png" width="63px" height="28px"></a>
     </div>
-    <form class="navbar-form navbar-left">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search" name="search">
-        <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
-            <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
     <form class="navbar-form navbar-right">
     <a class="navbar-brand" href="login.php">Log Out</a>
     </form>
