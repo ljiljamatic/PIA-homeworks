@@ -17,18 +17,6 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 </head>
 
 <body>
-       <nav class="navbar navbar-inverse navbar-fixed-top">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="#">IMDB</a>
-            </div>
-            <ul class="nav navbar-nav">
-              <li id="logout" class="nav-item"><a class="nav-link" href="logout.php">LOGOUT</a></li>
-            </ul>
-          </div>
-        </nav>
-
-
      <h1>Hello, <?php echo $_SESSION['name']; ?></h1>
 
 <?php
@@ -43,7 +31,8 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
         <div class="content">
             <img class="movie-image" src="<?= $row['image_url'] ?>">
             <div class="title">
-            <a class= "new" href="movie2.php" class="ca"><?= $row['title'] . " (" . $row['year'] . ")"; ?></a>
+            <?php echo "<a href='movie2.php?title=".$row['title']."'class='title'>"; ?>
+            <p class="title"> <?php echo $row['title']; ?></p> <?php echo "</a>"; ?>
             </div>
         </div>
     </div>
