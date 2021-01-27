@@ -8,7 +8,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 <html>
 <head>
     <title>LOGIN</title>
-    <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="stylesheet" type="text/css" href="movie2.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,6 +17,26 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 </head>
 
 <body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="home.php"><img src="imdb.png" width="63px" height="28px"></a>
+    </div>
+    <form class="navbar-form navbar-left">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" name="search">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    <form class="navbar-form navbar-right">
+    <a class="navbar-brand" href="login.php">Log Out</a>
+    </form>
+  </div>
+</nav>
 
 <?php
     $title = mysqli_real_escape_string($conn, $_GET['title']);
@@ -25,12 +45,19 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 
     while($row = mysqli_fetch_assoc($result)){     
 ?>
-    <div class="container">
-        <div class="content">
-        <div><?= $row['title'] ?></div>
-        <div><?= $row['year'] ?></div>
-        <div><?= $row['stars'] ?></div>
+    <div class="movie-container">
+        <div class="movie-content">
+        <div class = "movie-title"><?= $row['title'] . " (" . $row['year'] . ")" ?></div>
+        <div class = "row"><?= $row['runtime'] . " | " . $row['genres'] ?></div>
+        <img class="image" src="<?= $row['image_url'] ?>">
+        <div class="field">
+          <div class="description"><?= $row['description'] ?></div>
+          <div class="element"><?= "Production: " . $row['production'] ?></div>
+          <div class="element" ><?= "Directors: " . $row['directors'] ?></div>
+          <div class="element"><?= "Scenarist: " . $row['scenarist'] ?></div>
+          <div class="element"><?= "Stars: " . $row['stars'] ?></div>
         </div>
+    </div>
     </div>
 </body>
 </html>

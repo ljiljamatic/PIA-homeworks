@@ -1,5 +1,5 @@
 body {
-    background-color:black;
+    background-color:black !important;
     display: flex;
     height: 100vh;
     flex-direction: column;
@@ -29,9 +29,17 @@ body {
 }
 
 .title {
-    margin-top: 0px;
+    margin-top: 5px;
     background-color:  #fcba03;
     width:230px;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+}
+
+.title:hover{
+    color: white;
+    text-decoration: none;
 }
 
 .new {
