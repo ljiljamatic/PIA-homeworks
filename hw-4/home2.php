@@ -8,7 +8,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 <html>
 <head>
     <title>HOME ADMIN</title>
-    <link rel="stylesheet" type="text/css" href="home1.css">
+    <link rel="stylesheet" type="text/css" href="home2.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -38,7 +38,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
     </form>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">LIST</a></li>
-      <li><a href="#">ADD</a></li>
+      <li><a href="add.php">ADD</a></li>
       <li><a href="#">DELETE</a></li>
       <li><a href="#">UPDATE</a></li>
     </ul>
@@ -82,5 +82,4 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 </body>
 </html>
 <?php
-  }}}
-?>
+  }}}?>
