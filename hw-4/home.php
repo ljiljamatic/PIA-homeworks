@@ -71,23 +71,18 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 </nav>
 
 <?php
+    function validate($data){
+      $data = trim($data);
+      $data = stripcslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+  }
+
     if(isset($_POST['search'])) {
-      function validate($data){
-          $data = trim($data);
-          $data = stripcslashes($data);
-          $data = htmlspecialchars($data);
-          return $data;
-      }
     $search = validate($_POST['search']);
     $sql = "SELECT * FROM movies WHERE title LIKE '%$search%'";
     }
     else if(isset($_POST['search1'])) {
-      function validate($data){
-          $data = trim($data);
-          $data = stripcslashes($data);
-          $data = htmlspecialchars($data);
-          return $data;
-      }
     $search = validate($_POST['search1']);
     $sql = "SELECT * FROM movies WHERE genres LIKE '%$search%'";
     }
