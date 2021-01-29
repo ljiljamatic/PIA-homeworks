@@ -19,6 +19,7 @@ if(isset($_POST['title'])) {
     $scenarist = validate($_POST['scenarist']);
     $stars = validate($_POST['stars']);
     $genres = validate($_POST['genres']);
+    $year = validate($_POST['year']);
 
     if(empty($title)){
         header("Location: add.php?error=Title is required");
@@ -32,7 +33,7 @@ if(isset($_POST['title'])) {
             header("Location: add.php?error=The movie already exists");
             exit(); 
         }else{
-            $sql2 = "INSERT INTO movies(title, description, image_url, production, runtime, directors, scenarist, stars, genres) VALUES('$title', '$description', '$image_url', '$production', '$runtime', '$directors', '$scenarist', '$stars', '$genres')";
+            $sql2 = "INSERT INTO movies(title, description, image_url, production, runtime, directors, scenarist, stars, genres, year) VALUES('$title', '$description', '$image_url', '$production', '$runtime', '$directors', '$scenarist', '$stars', '$genres', $year)";
             $result2 = mysqli_query($conn, $sql2);
             if($result2){
                 header("Location: home2.php?success=Added successful");
