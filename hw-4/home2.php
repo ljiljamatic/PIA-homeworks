@@ -8,7 +8,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 <html>
 <head>
     <title>HOME ADMIN</title>
-    <link rel="stylesheet" type="text/css" href="home2.css">
+    <link rel="stylesheet" type="text/css" href="home.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -38,9 +38,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
     </form>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">LIST</a></li>
-      <li><a href="add.php">ADD</a></li>
-      <li><a href="#">DELETE</a></li>
-      <li><a href="#">UPDATE</a></li>
+      <li><a href="add.php">ADD MOVIE</a></li>
     </ul>
   
     <form class="navbar-form navbar-right">
@@ -77,6 +75,13 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
             <?php echo "<a href='movie2.php?title=".$row['title']."'class='title'>"; ?>
             <p class="title"> <?php echo $row['title']; ?></p> <?php echo "</a>"; ?>
             </div>
+
+            <?php echo "<a href='delete-check.php?title=".$row['title']."'>"; ?>
+            <button id="btn1" class="btn btn-default" type="submit">DELETE</button>
+            <?php echo "</a>"; ?>
+            <?php echo "<a href='edit-check.php?title=".$row['title']."'>"; ?>
+            <button class="btn btn-default" type="submit">UPDATE</button>
+            <?php echo "</a>"; ?>
         </div>
     </div>
 </body>

@@ -19,9 +19,6 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 <body>
 <nav class="navbar navbar-dark bg-secondary">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="home.php"><img src="x.png" width="33px" height="33px"></a>
-    </div>
     <form class="navbar-form navbar-left" action="home.php" method="post">
     </form>
     <form class="navbar-form navbar-right">

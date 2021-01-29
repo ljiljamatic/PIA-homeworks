@@ -66,8 +66,6 @@ body {
     float: right;
 }
 
-
-.add {
-    width: 50%;
-    color: white;
+#btn1 {
+    margin-left: 28px;
 }

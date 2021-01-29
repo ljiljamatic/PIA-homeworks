@@ -8,7 +8,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 <html>
 <head>
     <title>LOGIN</title>
-    <link rel="stylesheet" type="text/css" href="home1.css">
+    <link rel="stylesheet" type="text/css" href="home.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
