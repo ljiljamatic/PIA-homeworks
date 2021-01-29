@@ -25,7 +25,6 @@ if(isset($_POST['title'])) {
         exit();
     }
     else{
-
         $sql = "SELECT * FROM movies WHERE title='$title'";
         $result = mysqli_query($conn, $sql);
     

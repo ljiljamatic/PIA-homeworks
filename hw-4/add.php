@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SIGN UP</title>
+    <title>ADD MOVIE</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>

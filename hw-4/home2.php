@@ -77,9 +77,9 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
             </div>
 
             <?php echo "<a href='delete-check.php?title=".$row['title']."'>"; ?>
-            <button id="btn1" class="btn btn-default" type="submit">DELETE</button>
+            <button id="btn1" class="btn btn-default" type="submit">DELETE</button><br>
             <?php echo "</a>"; ?>
-            <?php echo "<a href='edit-check.php?title=".$row['title']."'>"; ?>
+            <?php echo "<a href='update-check.php?title=".$row['title']."'>"; ?>
             <button class="btn btn-default" type="submit">UPDATE</button>
             <?php echo "</a>"; ?>
         </div>
