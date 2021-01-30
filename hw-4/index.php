@@ -30,10 +30,8 @@ include "db_conn.php";
                         header("location:home.php");
                     }
                     session_start();
-                    $_SESSION['user_name'] = $row['user_name'];
-                    $_SESSION['name'] = $row['name'];
-                    $_SESSION['id'] = $row['id'];
                     $_SESSION['admin'] = $row['admin'];
+                    $_SESSION['isLogged'] = true;
                  }
             }else{
                 //nesto ako ne radi

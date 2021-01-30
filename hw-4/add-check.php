@@ -33,8 +33,9 @@ if(isset($_POST['title'])) {
         if(mysqli_num_rows($result) > 0) {
             header("Location: add.php?error=The movie already exists");
             exit(); 
-        }else{
-            $sql2 = "INSERT INTO movies(title, description, image_url, production, runtime, directors, scenarist, stars, genres, year) VALUES('$title', '$description', '$image_url', '$production', '$runtime', '$directors', '$scenarist', '$stars', '$genres', $year)";
+        }
+        if(mysqli_num_rows($result) == 0) {
+            $sql2 = "INSERT INTO movies(title, description, year, image_url, production, runtime, directors, scenarist, stars, genres) VALUES('$title', '$description', '$year', '$image_url', '$production', '$runtime','$directors', '$scenarist', '$stars', '$genres')";
             $result2 = mysqli_query($conn, $sql2);
             if($result2){
                 header("Location: home2.php?success=Added successful");

@@ -2,6 +2,10 @@
 session_start();
 include "db_conn.php";
 
+if(!isset($_SESSION['isLogged'])){
+  header("location:index.php"); //block if not logged in
+}
+
 if($_SESSION['admin'] == "admin"){
   header("location:home2.php");  //back to admin page
 }
