@@ -1,6 +1,10 @@
 <?php 
 session_start();
 include "db_conn.php";
+
+if($_SESSION['admin'] == ""){
+  header("location:home.php");  //back to user page
+}
 ?>
 
 <!DOCTYPE html>

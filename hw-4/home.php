@@ -2,6 +2,9 @@
 session_start();
 include "db_conn.php";
 
+if($_SESSION['admin'] == "admin"){
+  header("location:home2.php");  //back to admin page
+}
 
 ?>
 
