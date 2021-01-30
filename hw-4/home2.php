@@ -1,7 +1,6 @@
 <?php 
 session_start();
 include "db_conn.php";
-if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +41,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
     </ul>
   
     <form class="navbar-form navbar-right">
-    <a class="navbar-brand" href="login.php">Log Out</a>
+    <a class="navbar-brand" href="logout.php">Log Out</a>
     </form>
   </div>
 </nav>
@@ -87,4 +86,5 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 </body>
 </html>
 <?php
-  }}}?>
+}}
+?>

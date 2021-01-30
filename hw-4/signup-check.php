@@ -40,8 +40,6 @@ if(isset($_POST['uname']) && isset($_POST['password']) && isset($_POST['re_passw
     }
     else{
         //hashing password seckanje
-        $pass = md5($pass);
-        
         $sql = "SELECT * FROM users WHERE user_name='$uname'";
         $result = mysqli_query($conn, $sql);
     

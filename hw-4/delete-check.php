@@ -1,6 +1,8 @@
 <?php
 session_start();
 include "db_conn.php";
+
+
 $title = $_GET['title'];
 $sql = "DELETE FROM movies WHERE title='$title'";
 $result = mysqli_query($conn, $sql);
