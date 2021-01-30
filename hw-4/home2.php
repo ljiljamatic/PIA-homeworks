@@ -35,7 +35,7 @@ if($_SESSION['admin'] == ""){
     <div class="navbar-header">
       <a class="navbar-brand" href="home2.php">IMDb Admin</a>
     </div>
-    <form class="navbar-form navbar-left" action="home.php" method="post">
+    <form class="navbar-form navbar-left" action="home2.php" method="post">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search for the movie: " name="search">
         <div class="input-group-btn">
@@ -45,6 +45,34 @@ if($_SESSION['admin'] == ""){
         </div>
       </div>
     </form>
+
+    <form class="navbar-form navbar-left" action="home2.php" method="post">
+      <div class="input-group">
+        <form>
+        <select name="search1" class="form-control">
+           <option disabled selected>Select movie by genre: </option>
+           <option>Action</option>
+           <option>Comedy</option>
+           <option>Romance</option>
+           <option>Sci-Fi</option>
+           <option>Horror</option>
+           <option>Thriller</option>
+           <option>Mystery</option>
+           <option>Drama</option>
+           <option>Animation</option>
+           <option>Superhero</option>
+           <option>Adventure</option>
+           <option>Crime</option>
+        </select>
+       </form>
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">LIST</a></li>
       <li><a href="add.php">ADD MOVIE</a></li>
@@ -68,9 +96,14 @@ if($_SESSION['admin'] == ""){
     $search = validate($_POST['search']);
     $sql = "SELECT * FROM movies WHERE title LIKE '%$search%'";
     }
-    else{
-    $sql = "SELECT * FROM movies";
+    else if(isset($_POST['search1'])) {
+      $search = validate($_POST['search1']);
+      $sql = "SELECT * FROM movies WHERE genres LIKE '%$search%'";
     }
+    else{
+      $sql = "SELECT * FROM movies";
+    }
+
     $result = mysqli_query($conn, $sql);
     $resultCheck = mysqli_num_rows($result);
     if($resultCheck > 0){
