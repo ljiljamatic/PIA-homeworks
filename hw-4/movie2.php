@@ -1,6 +1,11 @@
 <?php 
 session_start();
 include "db_conn.php";
+
+if(!isset($_SESSION['isLogged'])){
+  header("location:index.php"); //block if not logged in
+}
+
 ?>
 
 <!DOCTYPE html>
