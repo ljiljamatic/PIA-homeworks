@@ -38,7 +38,8 @@ if($_SESSION['admin'] == ""){
     $title = mysqli_real_escape_string($conn, $_GET['title']);
     $sql = "SELECT * FROM movies WHERE title='$title'";
     $result = mysqli_query($conn, $sql);
-    while($row = mysqli_fetch_assoc($result)){     
+    while($row = mysqli_fetch_assoc($result)){    
+      $title_movie = $row['title'];  
 ?>
     <div class="movie-container">
         <div class="movie-content">
@@ -52,10 +53,34 @@ if($_SESSION['admin'] == ""){
           <div class="element" ><?= "DIRECTORS: " . $row['directors'] ?></div>
           <div class="element"><?= "SCENARIST: " . $row['scenarist'] ?></div>
           <div class="element"><?= "STARS: " . $row['stars'] ?></div>
+
+
+    <?php
+    $sql2 = "SELECT * FROM rating_system WHERE rating_title = '$title_movie' ";
+    $result2 = mysqli_query($conn, $sql2);
+    $sum = 0;
+    $count = 0;
+    $average = 0;
+
+    while($row = mysqli_fetch_assoc($result2)){
+        $sum += $row['rate'];
+        $count++;
+    }
+
+    if($count>0) {
+    $average = $sum / $count;
+    $average = round($average, 1); }   
+    else {
+    $average = 0;
+    }
+?>
+          <div class="element"><?= "Average rate: " . $average ?></div>
+          <div class="element"><?= "Number of rates: " . $count ?></div>
+          <br>
         </div>
-      </div>
-     </div>
     </div>
+   </div>
+  </div>
 </body>
 </html>
 
