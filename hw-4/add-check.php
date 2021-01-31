@@ -14,11 +14,8 @@ if(isset($_POST['add_movie'])) {
         return $data;
     }
 
-    $target = "images/".basename($_FILES['image']['name']); //where to upload
-
     $title = validate($_POST['title']);
     $description = validate($_POST['description']);
-    $image_url = $_FILES['image']['name'];
     $production = validate($_POST['production']);
     $runtime = validate($_POST['runtime']);
     $directors = validate($_POST['directors']);
@@ -26,6 +23,13 @@ if(isset($_POST['add_movie'])) {
     $stars = validate($_POST['stars']);
     $genres = validate($_POST['genres']);
     $year = validate($_POST['year']);
+
+    $image = $_FILES['image']['name'];
+    $target = "images/".basename($image);
+
+    if(!move_uploaded_file($_FILES['image']['tmp_name'], $target)){
+        echo "ERROR";
+    }
 
     if(empty($title)){
         header("Location: add.php?error=Title is required");
@@ -40,7 +44,7 @@ if(isset($_POST['add_movie'])) {
             exit(); 
         }
         if(mysqli_num_rows($result) == 0) {
-            $sql2 = "INSERT INTO movies(title, description, year, image_url, production, runtime, directors, scenarist, stars, genres) VALUES('$title', '$description', '$year', '$image_url', '$production', '$runtime','$directors', '$scenarist', '$stars', '$genres')";
+            $sql2 = "INSERT INTO movies(title, description, year, image_url, production, runtime, directors, scenarist, stars, genres) VALUES('$title', '$description', '$year', '$image', '$production', '$runtime','$directors', '$scenarist', '$stars', '$genres')";
             $result2 = mysqli_query($conn, $sql2);
             if($result2){
                 header("Location: home2.php?success=Added successful");

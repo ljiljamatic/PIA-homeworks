@@ -13,7 +13,7 @@
         <label>Description: </label>
         <input type="text" name="description" placeholder="Enter description:"><br>
         <label>Image: </label>
-        <input type="file" name="image"><br>
+        <input type="file" name="image">
         <label>Year: </label>
         <input type="text" name="year" placeholder="Enter year:"><br>
         <label>Production: </label>

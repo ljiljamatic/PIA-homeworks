@@ -45,7 +45,7 @@ if($_SESSION['admin'] == ""){
         <div class = "row"><?= $row['runtime'] . " min | " . $row['genres'] ?></div>
         </div>
         <div class="field">
-          <img class="image" src="<?= $row['image_url'] ?>">
+          <img class="image" src="<?php echo "images/".$row['image_url'] ?>">
           <div class="description"><?= $row['description'] ?></div>
           <div class="element"><?= "PRODUCTION: " . $row['production'] ?></div>
           <div class="element" ><?= "DIRECTORS: " . $row['directors'] ?></div>
