@@ -22,15 +22,34 @@ if(isset($_POST['rate_button'])) {
     $user = $_SESSION['username'];
     $title = $_SESSION['title'];
 
-    $sql = "INSERT INTO rating_system(rate, rating_user, rating_title) VALUES('$rate', '$user', '$title')";
+    $sql = "SELECT * FROM rating_system WHERE rating_title='$title'";
     $result = mysqli_query($conn, $sql);
+    
+    if(mysqli_num_rows($result) > 0) {
+        //update
+        $sql = "UPDATE rating_system SET rate = '$rate'";
+        $result = mysqli_query($conn, $sql);
 
     if($result){
+        header("Location: home2.php?success=Rate is updated successfully");
+        exit(); 
+    }else{
+        header("Location: home2.php?error=Error");
+        exit(); 
+    }
+    }
+    if(mysqli_num_rows($result) == 0) {
+        //insert
+        $sql = "INSERT INTO rating_system(rate, rating_user, rating_title) VALUES('$rate', '$user', '$title')";
+        $result = mysqli_query($conn, $sql);
+
+        if($result){
             header("Location: home2.php?success=Added successful");
             exit(); 
-    }else{
+        }else{
             header("Location: home2.php?error=Error");
             exit(); 
+        }
     }
 
 

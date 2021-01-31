@@ -23,7 +23,6 @@ if(isset($_POST['add_movie'])) {
     $stars = validate($_POST['stars']);
     $genres = validate($_POST['genres']);
     $year = validate($_POST['year']);
-
     $image = $_FILES['image']['name'];
     $target = "images/".basename($image);
 
@@ -53,7 +52,7 @@ if(isset($_POST['add_movie'])) {
                 header("Location: home2.php?error=Error");
                 exit(); 
             }
-    }
+     }
 
 }
 
