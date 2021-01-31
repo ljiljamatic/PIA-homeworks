@@ -74,13 +74,13 @@ $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 $title = $row['title'];
 
-if(isset($_POST['button_update_title'])){
-    $title = $_POST['update_title'];
-    $sql = "UPDATE movies SET title = '$title' WHERE title = '$movie_title'";
+if(isset($_POST['button_update_year'])){
+    $year = $_POST['update_year'];
+    $sql = "UPDATE movies SET year = '$year' WHERE title = '$movie_title'";
     $result = mysqli_query($conn, $sql);
 
     if($result){
-        header("Location: home2.php?success=Updated successful");
+        header("Location: home2.php?success=Year updated successfully");
         exit(); 
     }else{
         header("Location: home2.php?error=Error");
