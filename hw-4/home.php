@@ -106,9 +106,9 @@ if($_SESSION['admin'] == "admin"){
 ?>
     <div class="container">
         <div class="content">
-            <img class="movie-image" src="<?= $row['image_url'] ?>">
+            <img class="movie-image" src="<?php echo "images/".$row['image_url'] ?>">
             <div class="title">
-            <?php echo "<a href='movie2.php?title=".$row['title']."'class='title'>"; ?>
+            <?php echo "<a href='movie-user.php?title=".$row['title']."'class='title'>"; ?>
             <p class="title"> <?php echo $row['title']; ?></p> <?php echo "</a>"; ?>
             </div>
         </div>

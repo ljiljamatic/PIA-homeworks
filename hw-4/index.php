@@ -30,6 +30,7 @@ include "db_conn.php";
                         header("location:home.php");
                     }
                     session_start();
+                    $_SESSION['name'] = $row['name'];
                     $_SESSION['admin'] = $row['admin'];
                     $_SESSION['isLogged'] = true;
                  }

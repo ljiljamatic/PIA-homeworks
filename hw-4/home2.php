@@ -34,6 +34,9 @@ if($_SESSION['admin'] == ""){
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="home2.php">IMDb Admin</a>
+      <ul class="nav navbar-nav">
+      <li><a href="add.php">ADD MOVIE</a></li>
+    </ul>
     </div>
     <form class="navbar-form navbar-left" action="home2.php" method="post">
       <div class="input-group">
@@ -72,12 +75,6 @@ if($_SESSION['admin'] == ""){
         </div>
       </div>
     </form>
-
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">LIST</a></li>
-      <li><a href="add.php">ADD MOVIE</a></li>
-    </ul>
-  
     <form class="navbar-form navbar-right">
     <a class="navbar-brand" href="logout.php">Log Out</a>
     </form>
@@ -112,17 +109,17 @@ if($_SESSION['admin'] == ""){
 ?>
     <div class="container">
         <div class="content">
-            <img class="movie-image" src="<?= $row['image_url'] ?>">
+            <img class="movie-image" src="<?php echo "images/".$row['image_url'] ?>">
             <div class="title">
-            <?php echo "<a href='movie2.php?title=".$row['title']."'class='title'>"; ?>
+            <?php echo "<a href='movie-admin.php?title=".$row['title']."'class='title'>"; ?>
             <p class="title"> <?php echo $row['title']; ?></p> <?php echo "</a>"; ?>
             </div>
 
             <?php echo "<a href='delete-check.php?title=".$row['title']."'>"; ?>
-            <button id="btn1" class="btn btn-default" type="submit">DELETE</button><br>
+            <button id="btn1" class="btn btn-dark" type="submit">DELETE</button>
             <?php echo "</a>"; ?>
             <?php echo "<a href='update-check.php?title=".$row['title']."'>"; ?>
-            <button class="btn btn-default" type="submit">UPDATE</button>
+            <button class="btn btn-dark" type="submit">UPDATE</button>
             <?php echo "</a>"; ?>
         </div>
     </div>

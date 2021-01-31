@@ -7,19 +7,19 @@
 </head>
 <body>
 <div class="add" id="add">
-  <form action="" method="post" class="b">
+  <form action="" method="post" class="b" enctype="multipart/form-data">
         <p class="start">Update movie data: </p>
         <label>Title</label>
-        <input type=text name="update_title">
+        <input type=text name="update_title" placeholder="Enter title:">
         <button type="submit" name="button_update_title">Update title</button>
 
         <label>Description: </label>
         <input type="text" name="update_description" placeholder="Enter description:"><br>
         <button type="submit" name="button_update_description">Update description</button>
 
-        <label>Image URL: </label>
-        <input type="text" name="update_image" placeholder="Enter image URL:"><br>
-        <button type="submit" name="button_update_image">Update image</button>
+        <label>Image: </label>
+        <input type="file" name="image">
+        <button  type="submit" name="button_update_image">Update image</button>
 
         <label>Year: </label>
         <input type="text" name="update_year" placeholder="Enter year:"><br>
@@ -71,10 +71,10 @@ if(isset($_POST['button_update_title'])){
     $result = mysqli_query($conn, $sql);
 
     if($result){
-        header("Location: update-check.php?success=Updated successful");
+        header("Location: home2.php?success=Updated successful");
         exit(); 
     }else{
-        header("Location: update-check.php?error=Error");
+        header("Location: home2.php?error=Error");
         exit(); 
     }
 }
@@ -85,10 +85,10 @@ if(isset($_POST['button_update_title'])){
     $result = mysqli_query($conn, $sql);
 
     if($result){
-        header("Location: update-check.php?success=Title is updated successfully");
+        header("Location: home2.php?success=Title is updated successfully");
         exit(); 
     }else{
-        header("Location: update-check.php?error=Error");
+        header("Location: home2.php?error=Error");
         exit(); 
     }
 }
@@ -99,24 +99,31 @@ if(isset($_POST['button_update_description'])){
     $result = mysqli_query($conn, $sql);
 
     if($result){
-        header("Location: update-check.php?success=Description is updated successfully");
+        header("Location: home2.php?success=Description is updated successfully");
         exit(); 
     }else{
-        header("Location: update-check.php?error=Error");
+        header("Location: home2.php?error=Error");
         exit(); 
     }
 }
 
 if(isset($_POST['button_update_image'])){
-    $image = $_POST['update_image'];
-    $sql = "UPDATE movies SET image_url = '$image' WHERE title = '$movie_title'";
+    $image = $_FILES['image']['name'];
+    $target = "images/".basename($image);
+
+    if(!move_uploaded_file($_FILES['image']['tmp_name'], $target)){
+        echo "ERROR";
+    }
+
+    $sql = " UPDATE movies SET image_url = '$image' WHERE title = '$movie_title' ";
+
     $result = mysqli_query($conn, $sql);
 
     if($result){
-        header("Location: update-check.php?success=Image is updated successfully");
+        header("Location: home2.php?success=Image is updated successfully");
         exit(); 
     }else{
-        header("Location: update-check.php?error=Error");
+        header("Location: home2.php?error=Error");
         exit(); 
     }
 }
@@ -127,10 +134,10 @@ if(isset($_POST['button_update_production'])){
     $result = mysqli_query($conn, $sql);
 
     if($result){
-        header("Location: update-check.php?success=Production is updated successfully");
+        header("Location: home2.php?success=Production is updated successfully");
         exit(); 
     }else{
-        header("Location: update-check.php?error=Error");
+        header("Location: home2.php?error=Error");
         exit(); 
     }
 }
@@ -141,10 +148,10 @@ if(isset($_POST['button_update_runtime'])){
     $result = mysqli_query($conn, $sql);
 
     if($result){
-        header("Location: update-check.php?success=Runtime is updated successfully");
+        header("Location: home2.php?success=Runtime is updated successfully");
         exit(); 
     }else{
-        header("Location: update-check.php?error=Error");
+        header("Location: home2.php?error=Error");
         exit(); 
     }
 }
@@ -155,10 +162,10 @@ if(isset($_POST['button_update_directors'])){
     $result = mysqli_query($conn, $sql);
 
     if($result){
-        header("Location: update-check.php?success=Directors are updated successfully");
+        header("Location: home2.php?success=Directors are updated successfully");
         exit(); 
     }else{
-        header("Location: update-check.php?error=Error");
+        header("Location: home2.php?error=Error");
         exit(); 
     }
 }
@@ -169,10 +176,10 @@ if(isset($_POST['button_update_scenarist'])){
     $result = mysqli_query($conn, $sql);
 
     if($result){
-        header("Location: update-check.php?success=Scenarist is updated successfully");
+        header("Location: home2.php?success=Scenarist is updated successfully");
         exit(); 
     }else{
-        header("Location: update-check.php?error=Error");
+        header("Location: home2.php?error=Error");
         exit(); 
     }
 }
@@ -183,10 +190,10 @@ if(isset($_POST['button_update_stars'])){
     $result = mysqli_query($conn, $sql);
 
     if($result){
-        header("Location: update-check.php?success=Stars are updated successfully");
+        header("Location: home2.php?success=Stars are updated successfully");
         exit(); 
     }else{
-        header("Location: update-check.php?error=Error");
+        header("Location: home2.php?error=Error");
         exit(); 
     }
 }
@@ -197,10 +204,10 @@ if(isset($_POST['button_update_genres'])){
     $result = mysqli_query($conn, $sql);
 
     if($result){
-        header("Location: update-check.php?success=Genres are updated successfully");
+        header("Location: home2.php?success=Genres are updated successfully");
         exit(); 
     }else{
-        header("Location: update-check.php?error=Error");
+        header("Location: home2.php?error=Error");
         exit(); 
     }
 }

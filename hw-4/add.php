@@ -6,14 +6,14 @@
 </head>
 <body>
 <div class="add" id="add">
-  <form action="add-check.php" method="post" class="b">
+  <form action="add-check.php" method="post" class="b" enctype="multipart/form-data">
         <p class="start">Movie data: </p>
         <label>Title</label>
         <input type="text" name="title" placeholder="Enter title:"><br>
         <label>Description: </label>
         <input type="text" name="description" placeholder="Enter description:"><br>
-        <label>Image URL: </label>
-        <input type="text" name="image" placeholder="Enter image URL:"><br>
+        <label>Image: </label>
+        <input type="file" name="image"><br>
         <label>Year: </label>
         <input type="text" name="year" placeholder="Enter year:"><br>
         <label>Production: </label>

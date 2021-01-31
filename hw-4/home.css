@@ -20,7 +20,7 @@ body {
 }
 
 .content{
-    background-color:#fcba03;
+    background-color:black;
     width:230px;
     float:left;
     margin-left:440px;
@@ -29,7 +29,7 @@ body {
 
 .title {
     margin-top: 5px;
-    background-color:  #fcba03;
+    background-color: rgba(255, 255, 255, 0.678);
     width:230px;
     font-size: 20px;
     color: black;

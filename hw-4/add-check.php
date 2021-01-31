@@ -6,7 +6,7 @@ if(!isset($_SESSION['isLogged'])){
     header("location:index.php"); //block if not logged in
   }
 
-if(isset($_POST['title'])) {
+if(isset($_POST['add_movie'])) {
     function validate($data){
         $data = trim($data);
         $data = stripcslashes($data);
@@ -14,9 +14,11 @@ if(isset($_POST['title'])) {
         return $data;
     }
 
+    $target = "images/".basename($_FILES['image']['name']); //where to upload
+
     $title = validate($_POST['title']);
     $description = validate($_POST['description']);
-    $image_url = validate($_POST['image']);
+    $image_url = $_FILES['image']['name'];
     $production = validate($_POST['production']);
     $runtime = validate($_POST['runtime']);
     $directors = validate($_POST['directors']);
