@@ -75,6 +75,9 @@ if($_SESSION['admin'] == ""){
     <form class="navbar-form navbar-right">
     <a class="navbar-brand" href="logout.php">Log Out</a>
     </form>
+    <form class="navbar-form navbar-right">
+    <div class="navbar-brand"><?php echo "Admin: ".$_SESSION['username']; ?></div>
+    </form>
   </div>
 </nav>
 

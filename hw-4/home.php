@@ -29,7 +29,7 @@ if($_SESSION['admin'] == "admin"){
 <nav class="navbar navbar-dark bg-secondary">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="home.php"><img src="imdb.png" width="65px" height="26px"></a>
+      <a class="navbar-brand" href="home.php"><img src="imdb.png" width="65px" height="27px"></a>
     </div>
     <form class="navbar-form navbar-left" action="home.php" method="post">
       <div class="input-group">
@@ -69,6 +69,9 @@ if($_SESSION['admin'] == "admin"){
     </form>
     <form class="navbar-form navbar-right">
     <a class="navbar-brand" href="logout.php">Log Out</a>
+    </form>
+    <form class="navbar-form navbar-right">
+    <div class="navbar-brand"><?php echo "User: ".$_SESSION['username']; ?></div>
     </form>
   </div>
 </nav>
