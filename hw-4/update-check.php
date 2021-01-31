@@ -2,52 +2,58 @@
 <html>
 <head>
     <title>UPDATE MOVIE</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="admin.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
 </head>
 <body>
 <div class="add" id="add">
   <form action="" method="post" class="b" enctype="multipart/form-data">
         <p class="start">Update movie data: </p>
-        <label>Title</label>
-        <input type=text name="update_title" placeholder="Enter title:">
-        <button type="submit" name="button_update_title">Update title</button>
+
+        <label>Title:</label>
+        <input type=text name="update_title" placeholder="Enter title:"><br>
+        <button class="btn btn-dark" type="submit" name="button_update_title">Update title</button><br><br><br>
 
         <label>Description: </label>
         <input type="text" name="update_description" placeholder="Enter description:"><br>
-        <button type="submit" name="button_update_description">Update description</button>
+        <button class="btn btn-dark" type="submit" class="btn btn-dark" name="button_update_description">Update description</button><br><br><br>
 
         <label>Image: </label>
         <input type="file" name="image">
-        <button  type="submit" name="button_update_image">Update image</button>
+        <button class="btn btn-dark" type="submit" name="button_update_image">Update image</button><br><br><br>
 
         <label>Year: </label>
         <input type="text" name="update_year" placeholder="Enter year:"><br>
-        <button type="submit" name="button_update_year">Update year</button>
+        <button class="btn btn-dark" type="submit" name="button_update_year">Update year</button><br><br><br>
 
         <label>Production: </label>
         <input type="text" name="update_production" placeholder="Enter production:"><br> 
-        <button type="submit" name="button_update_production">Update production</button>
+        <button class="btn btn-dark" type="submit" name="button_update_production">Update production</button><br><br><br>
 
         <label>Runtime: </label>
         <input type="text" name="update_runtime" placeholder="Enter runtime:"><br> 
-        <button type="submit" name="button_update_runtime">Update runtime</button>
+        <button class="btn btn-dark" type="submit" name="button_update_runtime">Update runtime</button><br><br><br>
 
         <label>Directors: </label>
         <input type="text" name="update_directors" placeholder="Enter directors:"><br> 
-        <button type="submit" name="button_update_directors">Update directors</button>
+        <button class="btn btn-dark" type="submit" name="button_update_directors">Update directors</button><br><br><br>
 
         <label>Scenarist: </label>
         <input type="text" name="update_scenarist" placeholder="Enter scenarist:"><br> 
-        <button type="submit" name="button_update_scenarist">Update scenarist</button>
+        <button class="btn btn-dark" type="submit" name="button_update_scenarist">Update scenarist</button><br><br><br>
 
         <label>Stars: </label>
         <input type="text" name="update_stars" placeholder="Enter stars:"><br> 
-        <button type="submit" name="button_update_stars">Update stars</button>
+        <button class="btn btn-dark" type="submit" name="button_update_stars">Update stars</button><br><br><br>
 
         <label>Genres: </label>
         <input type="text" name="update_genres" placeholder="Enter genres:"><br> 
-        <button type="submit" name="button_update_genres">Update genres</button>
+        <button class="btn btn-dark" type="submit" name="button_update_genres">Update genres</button><br><br>
 
     </form>
 </div>
