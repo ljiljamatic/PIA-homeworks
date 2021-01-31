@@ -41,6 +41,8 @@ if($_SESSION['admin'] == "admin"){
     $result = mysqli_query($conn, $sql);
 
     while($row = mysqli_fetch_assoc($result)){   
+      $title_movie = $row['title']; 
+      
 ?>
     <div class="movie-container">
         <div class="movie-content">
@@ -53,14 +55,38 @@ if($_SESSION['admin'] == "admin"){
           <div class="element"><?= "PRODUCTION: " . $row['production'] ?></div>
           <div class="element" ><?= "DIRECTORS: " . $row['directors'] ?></div>
           <div class="element"><?= "SCENARIST: " . $row['scenarist'] ?></div>
-          <div class="element"><?= "STARS: " . $row['stars'] ?></div>
-          <br>
-
+          <div class="element"><?= "STARS: " . $row['stars'] ?></div><br>
           <form action="rating.php" method="POST"> 
               <?php $_SESSION['title'] = $row['title']; ?>
               <input class="form-control" type="number" name="rate_input" placeholder="Rate movie:"  min="1" max="10"><br>
               <button name="rate_button" class="btn btn-default">Rate</button>
           </form>
+          
+<?php
+$sql2 = "SELECT * FROM rating_system WHERE rating_title = '$title_movie' ";
+$result2 = mysqli_query($conn, $sql2);
+
+$sum = 0;
+$count = 0;
+$average = 0;
+
+while($row = mysqli_fetch_assoc($result2)){
+  $sum += $row['rate'];
+  $count++;
+}
+
+if($count>0){
+  $average = $sum / $count;
+  $average = round($average, 1);
+}else{
+  $average = 0;
+}
+
+
+?>
+          <div class="element"><?= "Average rate: " . $average ?></div>
+          <div class="element"><?= "Number of rates: " . $count ?></div>
+          <br>
 
         </div>
     </div>

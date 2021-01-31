@@ -27,7 +27,7 @@ if(isset($_POST['rate_button'])) {
     
     if(mysqli_num_rows($result) > 0) {
         //update
-        $sql = "UPDATE rating_system SET rate = '$rate'";
+        $sql = "UPDATE rating_system SET rate = '$rate' WHERE rating_title='$title' AND rating_user='$user' ";
         $result = mysqli_query($conn, $sql);
 
     if($result){
@@ -52,7 +52,6 @@ if(isset($_POST['rate_button'])) {
             exit(); 
         }
     }
-
 
 } else{
     header("Location: home2.php");
