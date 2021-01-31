@@ -6,7 +6,7 @@ body {
     color:white;
 }
 
-.movie-image{
+.movie-image {
     border: 0;
     padding: 0;
     height: 340px;
@@ -14,12 +14,12 @@ body {
     margin-bottom: 0;
 }
 
-.container{
+.container {
     padding:20px;
     width: 240px;
 }
 
-.content{
+.content {
     background-color:black;
     width:230px;
     float:left;
@@ -29,15 +29,16 @@ body {
 
 .title {
     margin-top: 5px;
-    background-color: rgba(255, 255, 255, 0.678);
+    background-color: #fcba03;
     width:230px;
     font-size: 20px;
     color: black;
     text-align: center;
+    font-weight: bold;
 }
 
-.title:hover{
-    color: white;
+.title:hover {
+    opacity: 0.9;
     text-decoration: none;
 }
 
@@ -58,7 +59,11 @@ body {
     text-decoration: none;
 }
 
-.new:hover{
+a {
+    text-decoration: none;
+}
+
+.new:hover {
     opacity: .8;
 }
 
@@ -68,8 +73,4 @@ body {
 
 #btn1 {
     margin-left: 28px;
-}
-
-a {
-    text-decoration: none;
 }

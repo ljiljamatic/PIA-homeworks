@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SIGN UP</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Sign Up With IMDb- IMDb</title>
+    <link rel="stylesheet" type="text/css" href="default.css">
 </head>
 
 <body>

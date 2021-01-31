@@ -9,34 +9,31 @@ if(!isset($_SESSION['isLogged'])){
 if($_SESSION['admin'] == "admin"){
   header("location:home2.php");  //back to admin page
 }
-
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>HOME USER</title>
-    <link rel="stylesheet" type="text/css" href="home.css">
+    <title>IMDb</title>
+    <link rel="stylesheet" type="text/css" href="homepage.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 <nav class="navbar navbar-dark bg-secondary">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="home.php"><img src="imdb.png" width="63px" height="25px"></a>
+      <a class="navbar-brand" href="home.php"><img src="imdb.png" width="65px" height="26px"></a>
     </div>
     <form class="navbar-form navbar-left" action="home.php" method="post">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for the movie: " name="search">
+        <input type="text" class="form-control" placeholder="Search IMDb: " name="search">
         <div class="input-group-btn">
           <button class="btn btn-default" type="submit">
             <i class="glyphicon glyphicon-search"></i>
@@ -44,12 +41,11 @@ if($_SESSION['admin'] == "admin"){
         </div>
       </div>
     </form>
-
     <form class="navbar-form navbar-left" action="home.php" method="post">
       <div class="input-group">
         <form>
         <select name="search1" class="form-control">
-           <option disabled selected>Select movie by genre: </option>
+           <option disabled selected>Search IMDb by genre: </option>
            <option>Action</option>
            <option>Comedy</option>
            <option>Romance</option>
@@ -71,12 +67,12 @@ if($_SESSION['admin'] == "admin"){
         </div>
       </div>
     </form>
-  
     <form class="navbar-form navbar-right">
     <a class="navbar-brand" href="logout.php">Log Out</a>
     </form>
   </div>
 </nav>
+
 
 <?php
     function validate($data){
@@ -94,7 +90,7 @@ if($_SESSION['admin'] == "admin"){
     $search = validate($_POST['search1']);
     $sql = "SELECT * FROM movies WHERE genres LIKE '%$search%'";
     }
-    else{
+    else {
     $sql = "SELECT * FROM movies";
     }
 
@@ -102,7 +98,6 @@ if($_SESSION['admin'] == "admin"){
     $resultCheck = mysqli_num_rows($result);
     if($resultCheck > 0){
         while($row = mysqli_fetch_assoc($result)){
-        
 ?>
     <div class="container">
         <div class="content">

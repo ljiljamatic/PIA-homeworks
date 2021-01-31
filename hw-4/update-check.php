@@ -4,18 +4,21 @@
     <title>UPDATE MOVIE</title>
     <link rel="stylesheet" type="text/css" href="admin.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
-<body>
-    
+
+<body>  
+<nav class="navbar navbar-dark bg-secondary">
+    <a class="navbar-brand navbar-left" href="home2.php">X</a>
+</nav>  
+
 <div class="add" id="add">
   <form action="" method="post" class="b" enctype="multipart/form-data">
         <p class="start">Update movie data: </p>
-
+        
         <label>Title:</label>
         <input type=text name="update_title" placeholder="Enter title:"><br>
         <button class="btn btn-dark" type="submit" name="button_update_title">Update title</button><br><br><br>
@@ -55,7 +58,6 @@
         <label>Genres: </label>
         <input type="text" name="update_genres" placeholder="Enter genres:"><br> 
         <button class="btn btn-dark" type="submit" name="button_update_genres">Update genres</button><br><br>
-
     </form>
 </div>
 

@@ -6,8 +6,8 @@ include "db_conn.php";
 <!DOCTYPE html>
 <html>
 <head>
-    <title>LOG IN</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Sign In With IMDb- IMDb</title>
+    <link rel="stylesheet" href="default.css">
 </head>
 
 <?php   
@@ -15,8 +15,8 @@ include "db_conn.php";
         $login = $_POST['user'];
         $pass = $_POST['password'];
         $qry = "SELECT user_name, email, password, admin FROM users";
-
         $res = mysqli_query($conn, $qry);
+
         while($row=mysqli_fetch_array($res)){
             $username = $row['user_name'];
             $email = $row['email'];
@@ -42,7 +42,6 @@ include "db_conn.php";
 }
 
 ?>
-
 <body>
     <img src = "imdb.png" class = "image"> 
     <form action="index.php" method="post" class="a">
@@ -54,8 +53,5 @@ include "db_conn.php";
       <button type="submit" name="login">Sing In</button>
       <a href="signup.php" class="ca">Create an account </a>
     </form>
-
-    
-
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>ADD MOVIE</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="default.css">
 </head>
 <body>
 <div class="add" id="add">

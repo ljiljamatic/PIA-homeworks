@@ -6,7 +6,6 @@ if(!isset($_SESSION['isLogged'])){
   header("location:index.php"); //block if not logged in
 }
 
-
 if($_SESSION['admin'] == ""){
   header("location:home.php");  //back to user page
 }
@@ -16,17 +15,15 @@ if($_SESSION['admin'] == ""){
 <!DOCTYPE html>
 <html>
 <head>
-    <title>HOME ADMIN</title>
-    <link rel="stylesheet" type="text/css" href="home.css">
+    <title>IMDb</title>
+    <link rel="stylesheet" type="text/css" href="homepage.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -87,7 +84,7 @@ if($_SESSION['admin'] == ""){
       $data = stripcslashes($data);
       $data = htmlspecialchars($data);
       return $data;
-  }
+    }
 
     if(isset($_POST['search'])) {
     $search = validate($_POST['search']);
@@ -100,12 +97,10 @@ if($_SESSION['admin'] == ""){
     else{
       $sql = "SELECT * FROM movies";
     }
-
     $result = mysqli_query($conn, $sql);
     $resultCheck = mysqli_num_rows($result);
     if($resultCheck > 0){
-        while($row = mysqli_fetch_assoc($result)){
-        
+        while($row = mysqli_fetch_assoc($result)){    
 ?>
     <div class="container">
         <div class="content">
