@@ -22,7 +22,7 @@ if(isset($_POST['rate_button'])) {
     $user = $_SESSION['username'];
     $title = $_SESSION['title'];
 
-    $sql = "SELECT * FROM rating_system WHERE rating_title='$title'";
+    $sql = "SELECT * FROM rating_system WHERE rating_title='$title' AND rating_user='$user'";
     $result = mysqli_query($conn, $sql);
     
     if(mysqli_num_rows($result) > 0) {
@@ -38,6 +38,7 @@ if(isset($_POST['rate_button'])) {
         exit(); 
     }
     }
+
     if(mysqli_num_rows($result) == 0) {
         //insert
         $sql = "INSERT INTO rating_system(rate, rating_user, rating_title) VALUES('$rate', '$user', '$title')";
