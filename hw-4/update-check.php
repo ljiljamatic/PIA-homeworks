@@ -11,6 +11,7 @@
     
 </head>
 <body>
+    
 <div class="add" id="add">
   <form action="" method="post" class="b" enctype="multipart/form-data">
         <p class="start">Update movie data: </p>

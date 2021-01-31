@@ -15,7 +15,7 @@ if($_SESSION['admin'] == "admin"){
 <!DOCTYPE html>
 <html>
 <head>
-    <title>LOGIN</title>
+    <title>HOME USER</title>
     <link rel="stylesheet" type="text/css" href="home.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

@@ -32,10 +32,11 @@ include "db_conn.php";
                     session_start();
                     $_SESSION['name'] = $row['name'];
                     $_SESSION['admin'] = $row['admin'];
+                    $_SESSION['username'] = $row['user_name'];
                     $_SESSION['isLogged'] = true;
                  }
             }else{
-                //nesto ako ne radi
+                //
         }
     }
 }

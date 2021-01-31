@@ -14,7 +14,7 @@ if($_SESSION['admin'] == ""){
 <!DOCTYPE html>
 <html>
 <head>
-    <title>LOGIN</title>
+    <title>MOVIE PAGE</title>
     <link rel="stylesheet" type="text/css" href="movie22.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,6 +25,9 @@ if($_SESSION['admin'] == ""){
 <nav class="navbar navbar-dark bg-secondary">
   <div class="container-fluid">
     <form class="navbar-form navbar-left" action="home.php" method="post">
+    </form>
+    <form class="navbar-form navbar-left">
+    <a class="navbar-brand" href="home2.php">Back</a>
     </form>
     <form class="navbar-form navbar-right">
     <a class="navbar-brand" href="logout.php">Log Out</a>

@@ -14,7 +14,7 @@ if($_SESSION['admin'] == "admin"){
 <!DOCTYPE html>
 <html>
 <head>
-    <title>LOGIN</title>
+    <title>MOVIE PAGE</title>
     <link rel="stylesheet" type="text/css" href="movie22.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,6 +24,9 @@ if($_SESSION['admin'] == "admin"){
 <body>
 <nav class="navbar navbar-dark bg-secondary">
   <div class="container-fluid">
+  <form class="navbar-form navbar-left">
+    <a class="navbar-brand" href="home.php">Back</a>
+    </form>
     <form class="navbar-form navbar-left" action="home.php" method="post">
     </form>
     <form class="navbar-form navbar-right">
@@ -52,24 +55,14 @@ if($_SESSION['admin'] == "admin"){
           <div class="element"><?= "SCENARIST: " . $row['scenarist'] ?></div>
           <div class="element"><?= "STARS: " . $row['stars'] ?></div>
           <br>
-        </div>
 
-    <form action="" method="POST">
-    <select name="search1" class="form-control">
-           <option disabled selected>Select grade:</option>
-           <option>1</option>
-           <option>2</option>
-           <option>3</option>
-           <option>4</option>
-           <option>5</option>
-           <option>6</option>
-           <option>7</option>
-           <option>8</option>
-           <option>9</option>
-           <option>10</option>
-        </select>
-    <button name="rate">Rate</button>
-    </form>
+          <form action="rating.php" method="POST"> 
+              <?php $_SESSION['title'] = $row['title']; ?>
+              <input class="form-control" type="number" name="rate_input" placeholder="Rate movie:"  min="1" max="10"><br>
+              <button name="rate_button" class="btn btn-default">Rate</button>
+          </form>
+
+        </div>
     </div>
 
 
