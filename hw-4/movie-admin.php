@@ -74,7 +74,7 @@ if($_SESSION['admin'] == ""){
     $average = 0;
     }
 ?>
-          <div class="element"><?= "Average rate: " . $average ?></div>
+          <br><div class="element"><?= "Average rate: " . $average ?></div>
           <div class="element"><?= "Number of rates: " . $count ?></div>
           <br>
         </div>
